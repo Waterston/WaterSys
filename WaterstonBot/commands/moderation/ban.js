@@ -25,7 +25,7 @@ module.exports = {
         .setAuthor(message.author.username)
         .setTimestamp()
         .setFooter("Waterston Systems", message.guild.iconURL)
-        .setDescription(`⛔ **Banned: ** ${banMember.user}\n:newspaper: **Reason: ** ${reason}\n:hammer: **Moderator: ** ${message.member}`)
+        .setDescription(`:white_check_mark: **Banned: ** ${banMember.user}\n:newspaper: **Reason: ** ${reason}\n:hammer: **Moderator: ** ${message.member}`)
 
         let sChannel = message.guild.channels.find(c => c.name === "incident-logs")
         sChannel.send(embed)
