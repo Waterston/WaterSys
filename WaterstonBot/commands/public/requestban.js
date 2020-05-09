@@ -1,23 +1,23 @@
-const { RichEmbed } = require("discord.js");
+const Discord = require('discord.js');
 const { stripIndents } = require("common-tags");
 
 module.exports = {
     name: "requestban",
-    category: "moderation",
+    category: "public",
     description: "Request a game ban",
     usage: "<mention, id>",
     run: async (client, message, args) => {
          let rMember = args[0]       
-        const channel = message.guild.channels.find(c => c.name === "ban-request")
-        
+         const channel = message.guild.channels.cache.find(channel => channel.name === "ban-request")
         if (!channel)
             return;
 
-            const embed = new RichEmbed()
+            const embed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()
-            .setFooter("Waterston Systems", message.guild.iconURL)
-            .setTitle("Ban Request")
+            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+            .setTitle("WaterstonSystems Ban Request")
             .addField('Reported by:', `${message.member}`)
             .addField('User Reported:', rMember)
             .addField('Information:', `${args.slice(1).join(" ")}`)
