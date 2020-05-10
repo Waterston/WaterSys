@@ -6,8 +6,8 @@ module.exports = {
   category: "Moderation",
   description: "Warns a user for a reason",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`Insufficient Permissions`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`Invalid User`).then(r => r.delete({
+    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ Invalid user`).then(r => r.delete({
       timeout: 10000
     }))
     let member = message.mentions.members.first()
@@ -25,7 +25,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle(`WaterstonSystems Warnings Issued`)
+      .setTitle(`Warning Issued`)
       .setDescription(`**User Warned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${warnObj.id}`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
@@ -35,7 +35,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle(`"WaterstonSystems Warnings Issued"`)
+      .setTitle(`"Warning Issued"`)
       .setDescription(`Sucessfully issued a warning to <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
