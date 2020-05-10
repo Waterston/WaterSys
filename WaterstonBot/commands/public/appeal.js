@@ -8,17 +8,17 @@ module.exports = {
     usage: "<mention, id>",
     run: async (client, message, args) => {
         let rMember = args[0]       
-        const channel = message.guild.channels.cache.find(channel => channel.name === "appeal-request")
+        const channel = message.guild.channels.cache.find(channel => channel.name === "history-appeal-logs")
         
         if (!channel)
-            return;
+            return channel.send("Channel not found. Please contact a Founder to fix this.");
             const appealchannelembed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
             .setTitle("WaterstonSystems Appeal Request")
-            .setDescription(`${message.member}, sucessfully sent your appeal to further review by our Discord Moderation team.'`)
+            .setDescription(`${message.member}, sucessfully sent your appeal to further review by our Discord Moderation team.`)
 
 
             const embed = new Discord.MessageEmbed()
@@ -30,7 +30,7 @@ module.exports = {
             .addField('Submitted by:', `${message.member}`)
             .addField('Appeal Type:', rMember)
             .addField('Reason:', `${args.slice(1).join(" ")}`)
-            message.channel.send(appealchannelembed).then(m => m.delete(20000));
+            message.channel.send(appealchannelembed)
             return channel.send(embed);
             
 
