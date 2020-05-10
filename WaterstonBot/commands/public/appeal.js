@@ -17,8 +17,8 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-            .setTitle("WaterstonSystems Appeal Request")
-            .setDescription(`${message.member}, sucessfully sent your appeal to further review by our Discord Moderation team.`)
+            .setTitle("Appeal Request")
+            .setDescription(`${message.member}, sucessfully sent your appeal to our Discord Moderation team for further review.`)
 
 
             const embed = new Discord.MessageEmbed()
