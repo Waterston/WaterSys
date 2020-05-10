@@ -6,8 +6,8 @@ module.exports = {
   category: "Moderation",
   description: "Lets you view kicks for a user",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`Insufficient Permissions`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`No user specified, please ping someone`).then(r => r.delete({
+    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     }))
     let member = message.mentions.members.first()
@@ -21,7 +21,7 @@ module.exports = {
     .setAuthor(member.user.tag, member.user.displayAvatarURL({
       dynamic: true
     }))
-    .setTitle("WaterstonSystems Kick History")
+    .setTitle("Kick History")
     .setDescription(desc)
     .setFooter(`Kicks for ${member.user.tag}`, client.user.displayAvatarURL()) 
     .setTimestamp()
