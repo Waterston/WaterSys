@@ -17,8 +17,8 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-            .setTitle("WaterstonSystems Appeal Request")
-            .setDescription(`${message.member}, sucessfully sent your appeal to further review by our Discord Moderation team.`)
+            .setTitle("Appeal Request")
+            .setDescription(`${message.member}, sucessfully sent your appeal to our Discord Moderation team for further review.`)
 
 
             const embed = new Discord.MessageEmbed()
@@ -26,13 +26,16 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-            .setTitle("WaterstonSystems Appeal Request")
+            .setTitle("Appeal Request")
             .addField('Submitted by:', `${message.member}`)
             .addField('Appeal Type:', rMember)
             .addField('Reason:', `${args.slice(1).join(" ")}`)
             message.channel.send(appealchannelembed)
-            return channel.send(embed);
-            
-
+            let msg = await channel.send({
+                embed: embed
+              })
+              await msg.react('✅')
+              await msg.react('❌')
+            return
     }
 }

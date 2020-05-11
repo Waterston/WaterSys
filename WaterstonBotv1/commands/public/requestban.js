@@ -17,21 +17,24 @@ module.exports = {
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-            .setTitle("WaterstonSystems Ban Request")
-            .setDescription(`${message.member}, sucessfully sent your ban request to further review by our Game Moderation team.`)
+            .setTitle("Ban Request")
+            .setDescription(`${message.member}, sucessfully sent your ban request to our Game Moderation team for further review.`)
 
             const embed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setTitle("WaterstonSystems Ban Request")
+            .setTitle("Ban Request")
             .addField('Reported by:', `${message.member}`)
             .addField('User Reported:', rMember)
             .addField('Information:', `${args.slice(1).join(" ")}`)
             message.channel.send(requestbanchannelembed);
-            return channel.send(embed);
-            
-
+            let msg = await channel.send({
+                embed: embed
+              })
+              await msg.react('✅')
+              await msg.react('❌')
+            return
     }
 }

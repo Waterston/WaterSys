@@ -5,7 +5,7 @@ let fetch = require('node-superfetch')
 module.exports = {
   name: "register",
   category: "Roblox",
-  description: "Registers your ROBLOX account",
+  description: "Registers your Roblox account and links it to your Discord account",
   run: async (client, message, args) => {
     try {
       let {
@@ -14,11 +14,11 @@ module.exports = {
       let thumbnail = await getAccountThumbnail(body.robloxId)
       let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setTitle(`WaterstonSystems Verification`)
+        .setTitle(`Verification`)
         .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
         .setThumbnail(thumbnail)
-        .setDescription(`Your account username is set to: **${body.robloxUsername}**. Is this correct?`)
+        .setDescription(`Your Roblox username is: **${body.robloxUsername}**. Is this correct?`)
         .setTimestamp()
       let msg = await message.channel.send({
         embed: confirmationEmbed
@@ -33,7 +33,7 @@ module.exports = {
       msg.delete()
       let notverifiedembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setTitle(`WaterstonSystems Verification`)
+        .setTitle(`Verification Setup`)
         .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
         .setFooter("WaterstonSystems", client.user.displayAvatarURL())
         .setTimestamp()
@@ -61,17 +61,17 @@ module.exports = {
         db.set(`vers.${message.guild.id}.${message.author.id}`, obj)
         let completedveri = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setTitle(`WaterstonSystems Verification`)
+        .setTitle(`Verification Completed`)
         .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
         .setFooter("WaterstonSystems", client.user.displayAvatarURL())
         .setThumbnail(thumbnail)
         .setTimestamp()
-        .setDescription(`Welcome, ${body.robloxUsername}! Successfully connected your Roblox Acccount with your Discord account.`)
+        .setDescription(`Welcome, **${body.robloxUsername}**! Successfully connected your Roblox acccount with your Discord account.`)
         return message.channel.send(completedveri)
       }
     } catch (e) {
       if (e.body && e.body.status === "error") {
-        return message.channel.send(`${e.body.error === "User not found." ? "You do not have a RoVerify linked account. Please go to https://verify.eryn.io/, verify, and try again." : e.body.error}`)
+        return message.channel.send(`${e.body.error === "User not found." ? "It appears that you don't have a linked Roblox account. Please go to https://verify.eryn.io/, verify, and try again." : e.body.error}`)
       } else {
         console.log(e)
       }
@@ -86,13 +86,13 @@ async function getAuxillaryGroups(id) {
   let roles = []
   let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518].includes(g.group.id))
   let auxBinds = {
-    '5406536': '709094570721280104', //firedept
-    '5406514': '709093922453979188', //state
-    '5440073': '709094155598561362', //sherrif
+    '5406536': '709094570721280104', //fire department
+    '5406514': '709093922453979188', //state patrol
+    '5440073': '709094155598561362', //sherrif office
     '5586877': '709059612430565408', //corrections
-    '5557949': '709094267661844540', //fed
-    '5440075': '709094830931836928', //national
-    '5406532': '709094923722555485', //transp
+    '5557949': '709094267661844540', //federal defense
+    '5440075': '709094830931836928', //national guard
+    '5406532': '709094923722555485', //transportation
     '5406518': '709095030958063616' //public
   }
   for (let group of auxGroups) {

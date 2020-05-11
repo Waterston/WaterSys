@@ -6,8 +6,8 @@ module.exports = {
   category: "Moderation",
   description: "Lets you view warnings for a user",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`Insufficient Permissions`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`Invalid User`).then(r => r.delete({
+    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ Invalid user.`).then(r => r.delete({
       timeout: 10000
     }))
     let member = message.mentions.members.first()
@@ -21,7 +21,7 @@ module.exports = {
       .setAuthor(member.user.tag, member.user.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Warnings History")
+      .setTitle("Warnings History")
       .setDescription(desc)
       .setFooter(`Warnings for ${member.user.tag}`, client.user.displayAvatarURL()) 
       .setTimestamp()

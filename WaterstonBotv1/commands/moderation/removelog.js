@@ -5,16 +5,16 @@ let db = require('quick.db')
 module.exports = {
   name: "removelog",
   category: "Moderation",
-  description: "Removes a log from a user",
+  description: "Removes a moderation log from a user",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`Insufficient Permissions`).then(r => r.delete({timeout: 10000}))
-    if (!args[0]) return message.channel.send(`Please mention an ID`).then(r => r.delete({
+    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (!args[0]) return message.channel.send(`⚠️ Please mention an ID`).then(r => r.delete({
       timeout: 10000
     }))
     let id = args[0]
     let logs = db.fetch(`logs.${message.guild.id}`)
     let action = logs.find(r => r.id === id)
-    if (!action) return message.channel.send(`Please mention a valid ID`).then(r => r.delete({
+    if (!action) return message.channel.send(`⚠️ Please mention a valid ID`).then(r => r.delete({
       timeout: 10000
     }))
     let desc = `Is this the log you want to revoke?\n`

@@ -84,7 +84,9 @@ ice!`)
     .setTitle("Welcome to the State of Waterston")
     .setDescription(`${member} has joined the State of Waterston! Make sure to review our Server Guidelines and Discord Terms of Service!`)
     channel.send(welcomegeneralembed);
-    member.send(welcomeembed);
+    member.send(welcomeembed).catch((error) => {
+      return
+    });
 })
 
   async function getAuxillaryGroups(id) {
@@ -94,13 +96,13 @@ ice!`)
     let roles = []
     let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518].includes(g.group.id))
     let auxBinds = {
-      '5406536': '709094570721280104', //firedept
-      '5406514': '709093922453979188', //state
-      '5440073': '709094155598561362', //sherrif
+      '5406536': '709094570721280104', //fire department
+      '5406514': '709093922453979188', //state patrol
+      '5440073': '709094155598561362', //sherrif office
       '5586877': '709059612430565408', //corrections
-      '5557949': '709094267661844540', //fed
-      '5440075': '709094830931836928', //national
-      '5406532': '709094923722555485', //transp
+      '5557949': '709094267661844540', //federal defense
+      '5440075': '709094830931836928', //national guard
+      '5406532': '709094923722555485', //transportation
       '5406518': '709095030958063616' //public
     }
     for (let group of auxGroups) {
