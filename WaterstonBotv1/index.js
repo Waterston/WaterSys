@@ -39,6 +39,11 @@ const {
           let remove = []
           let add = []
           let member = guild.members.resolve(data.dsc)
+          if (!member) {
+            db.delete(`vers.${guildId}.{data.dsc}`)
+            continue;
+          }
+          
           let aux = await getAuxillaryGroups(data.rbx)
           let main = await getMainRoleGroup(data.rbx)
           if (data.rank.id !== main.id) {

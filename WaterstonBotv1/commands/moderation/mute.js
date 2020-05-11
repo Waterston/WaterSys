@@ -41,4 +41,4 @@ module.exports = {
             return client.channels.resolve('709074878912790529').send(mutedembed)
         })
   }
-};
+}; 

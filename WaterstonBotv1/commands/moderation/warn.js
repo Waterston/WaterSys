@@ -7,7 +7,7 @@ module.exports = {
   description: "Warns a user for a reason",
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ Invalid user`).then(r => r.delete({
+    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     }))
     let member = message.mentions.members.first()
@@ -28,14 +28,14 @@ module.exports = {
       .setTitle(`Warning Issued`)
       .setDescription(`**User Warned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${warnObj.id}`)
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(`WaterstonSystems`, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(logEmbed)
     let warnedEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle(`"Warning Issued"`)
+      .setTitle(`Warning Issued`)
       .setDescription(`Sucessfully issued a warning to <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
