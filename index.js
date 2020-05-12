@@ -17,11 +17,11 @@ const {
   
   
   ["command"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
+    require(`./src/handlers/${handler}`)(client);
   });
   
   client.on("ready", () => {
-    console.log(`${client.user.username} is now connected to servers and loaded commands.`);
+    console.log(`${client.user.username} is now connected to servers and commands loaded.`);
     client.user.setPresence({
       status: "online",
       activity: {
