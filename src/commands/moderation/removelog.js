@@ -56,7 +56,7 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           timeout: 10000
         }))
-        .setTitle(`WaterstonSystems Case Deleted`)
+        .setTitle(`Case Deleted`)
         .setDescription(`**Case Type:** ${action.id.startsWith('w') ? 'Warn' : 'Kick'}\n**Content Moderator:** <@${message.author.id}>\n**User:** <@${action[`${action.id.startsWith('w') ? 'warn' : 'kick'}er`]}>\n**Case ID:** ${action.id}:\n\n${Object.entries(action).map(r => `**${r[0]}:** ${r[0].endsWith('er') ? `<@${r[1]}>` : r[0].endsWith('ed') ? `<@${r[1]}>` : r[1]}`).join('\n')}`)
         .setTimestamp()
       client.channels.resolve('709074878912790529').send(logEmbed)
