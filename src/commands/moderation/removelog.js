@@ -4,6 +4,7 @@ let db = require('quick.db')
 
 module.exports = {
   name: "removelog",
+  aliases: ['revokelog'],
   category: "Moderation",
   description: "Removes a moderation log from a user",
   run: async (client, message, args) => {
