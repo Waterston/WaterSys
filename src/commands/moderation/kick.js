@@ -27,7 +27,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Kick Issued")
+      .setTitle("Kick Issued")
       .setDescription(`**User Kicked:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${kickObj.id}`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
@@ -36,7 +36,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Kick Issued")
+      .setTitle("Kick Issued")
       .setDescription(`Sucessfully kicked <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 

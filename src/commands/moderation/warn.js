@@ -25,7 +25,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle(`WaterstonSystems Warning Issued`)
+      .setTitle(`Warning Issued`)
       .setDescription(`**User Warned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${warnObj.id}`)
       .setTimestamp()
       .setFooter(`WaterstonSystems`, client.user.displayAvatarURL()) 
@@ -35,7 +35,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle(`WaterstonSystems Warning Issued`)
+      .setTitle(`Warning Issued`)
       .setDescription(`Sucessfully issued a warning to <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 

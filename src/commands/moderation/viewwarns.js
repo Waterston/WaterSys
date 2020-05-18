@@ -21,7 +21,7 @@ module.exports = {
       .setAuthor(member.user.tag, member.user.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Warnings History")
+      .setTitle("Warnings History")
       .setDescription(desc)
       .setFooter(`Warnings for ${member.user.tag}`, client.user.displayAvatarURL()) 
       .setTimestamp()

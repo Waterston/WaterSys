@@ -20,7 +20,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Ban Issued")
+      .setTitle("Ban Issued")
       .setDescription(`**User Banned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
@@ -29,7 +29,7 @@ module.exports = {
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         dynamic: true
       }))
-      .setTitle("WaterstonSystems Ban Issued")
+      .setTitle("Ban Issued")
       .setDescription(`Sucessfully banned <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 

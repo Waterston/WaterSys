@@ -21,7 +21,7 @@ module.exports = {
     Object.entries(action).map(r => desc += `\n**${r[0]}:** ${r[0].endsWith('er') ? `<@${r[1]}>` : r[0].endsWith('ed') ? `<@${r[1]}>` : r[1]}`)
     let confirmationEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
-      .setTitle(`WaterstonSystems Delete Log`)
+      .setTitle(`Delete Log`)
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         timeout: 10000
       }))

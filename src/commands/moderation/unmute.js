@@ -21,7 +21,7 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
-        .setTitle(`WaterstonSystems Unmute Issued`)
+        .setTitle(`Unmute Issued`)
         .setDescription(`**User Unmuted:** <@${mutee.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
         .setTimestamp()
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
@@ -31,7 +31,7 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
-        .setTitle(`WaterstonSystems Unmute Issued`)
+        .setTitle(`Unmute Issued`)
         .setDescription(`Sucessfully issued an unmute to <@${mutee.user.id}> by <@${message.author.id}> for **${reason}.**`)
         .setTimestamp()
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 

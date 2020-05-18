@@ -21,7 +21,7 @@ module.exports = {
     .setAuthor(member.user.tag, member.user.displayAvatarURL({
       dynamic: true
     }))
-    .setTitle("WaterstonSystems Kick History")
+    .setTitle("Kick History")
     .setDescription(desc)
     .setFooter(`Kicks for ${member.user.tag}`, client.user.displayAvatarURL()) 
     .setTimestamp()

@@ -20,7 +20,7 @@ module.exports = {
         .setTimestamp()
         .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-        .setTitle("WaterstonSystems Uptime")
+        .setTitle("Bot Uptime")
         .setDescription(`${duration(client.uptime)}`)
         message.channel.send(uptimeembed)
     
