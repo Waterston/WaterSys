@@ -16,29 +16,29 @@ module.exports = {
 
         let muterole = message.guild.roles.cache.find(r => r.name === "Muted");
 
-        let mutedembed = new Discord.MessageEmbed()
+        let unmutedembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
-        .setTitle(`WaterstonSystems Mute Issued`)
-        .setDescription(`**User Muted:** <@${mutee.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
+        .setTitle(`WaterstonSystems Unmute Issued`)
+        .setDescription(`**User Unmuted:** <@${mutee.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
         .setTimestamp()
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
         
-        let mutedlogembed = new Discord.MessageEmbed()
+        let unmutedlogembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
-        .setTitle(`WaterstonSystems Mute Issued`)
-        .setDescription(`Sucessfully issued a mute to <@${mutee.user.id}> by <@${message.author.id}> for **${reason}.**`)
+        .setTitle(`WaterstonSystems Unmute Issued`)
+        .setDescription(`Sucessfully issued an unmute to <@${mutee.user.id}> by <@${message.author.id}> for **${reason}.**`)
         .setTimestamp()
         .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
 
-        mutee.roles.add(muterole.id).catch(console.error).then(() => {
-            message.channel.send(mutedlogembed)
-            return client.channels.resolve('709074878912790529').send(mutedembed)
+        mutee.roles.remove(muterole.id).catch(console.error).then(() => {
+            message.channel.send(unmutedlogembed)
+            return client.channels.resolve('709074878912790529').send(unmutedembed)
         })
   }
 }; 

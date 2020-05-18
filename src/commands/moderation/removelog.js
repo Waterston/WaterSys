@@ -20,7 +20,8 @@ module.exports = {
     let desc = `Is this the log you want to revoke?\n`
     Object.entries(action).map(r => desc += `\n**${r[0]}:** ${r[0].endsWith('er') ? `<@${r[1]}>` : r[0].endsWith('ed') ? `<@${r[1]}>` : r[1]}`)
     let confirmationEmbed = new Discord.MessageEmbed()
-      .setColor('ORANGE')
+      .setColor("#0084ff")
+      .setTitle(`WaterstonSystems Delete Log`)
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
         timeout: 10000
       }))
@@ -35,14 +36,14 @@ module.exports = {
     })
     if (!reaction) {
       await msg.delete()
-      return message.channel.send(`Prompt timed out`).then(r => r.delete({
+      return message.channel.send(`Command timed out.`).then(r => r.delete({
         timeout: 10000
       }))
     }
     let emoji = reaction.first().emoji.name
     if (emoji === '❌') {
       await msg.delete()
-      return message.channel.send(`Please re-execute the command with the right ID`).then(r => r.delete({
+      return message.channel.send(`Command canceled. Execute the correct Case ID with the command again.`).then(r => r.delete({
         timeout: 10000
       }))
     } else
@@ -51,12 +52,12 @@ module.exports = {
       logs = logs.filter(r => r.id !== id)
       db.set(`logs.${message.guild.id}`, logs)
       let logEmbed = new Discord.MessageEmbed()
-        .setColor('ORANGE')
+        .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           timeout: 10000
         }))
-        .setTitle(`Log Revoked`)
-        .setDescription(`**Type:** ${action.id.startsWith('w') ? 'Warn' : 'Kick'}\n**Revoker:** <@${message.author.id}>\n**Revoked From:** <@${action[`${action.id.startsWith('w') ? 'warn' : 'kick'}er`]}>\n\n**Log ${action.id}:**\n\n${Object.entries(action).map(r => `**${r[0]}:** ${r[0].endsWith('er') ? `<@${r[1]}>` : r[0].endsWith('ed') ? `<@${r[1]}>` : r[1]}`).join('\n')}`)
+        .setTitle(`WaterstonSystems Case Deleted`)
+        .setDescription(`**Case Type:** ${action.id.startsWith('w') ? 'Warn' : 'Kick'}\n**Content Moderator:** <@${message.author.id}>\n**User:** <@${action[`${action.id.startsWith('w') ? 'warn' : 'kick'}er`]}>\n**Case ID:** ${action.id}:\n\n${Object.entries(action).map(r => `**${r[0]}:** ${r[0].endsWith('er') ? `<@${r[1]}>` : r[0].endsWith('ed') ? `<@${r[1]}>` : r[1]}`).join('\n')}`)
         .setTimestamp()
       client.channels.resolve('709074878912790529').send(logEmbed)
       return message.channel.send(`Successfully revoked a log with id ${id}`)
