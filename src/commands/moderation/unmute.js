@@ -2,9 +2,9 @@ const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
 
 module.exports = {
-    name: "mute",
+    name: "unmute",
     category: "moderation",
-    description: "Mutes a user",
+    description: "Unmutes a user",
     run: async (client, message, args) => {
         if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 
