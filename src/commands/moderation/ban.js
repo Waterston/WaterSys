@@ -14,7 +14,7 @@ module.exports = {
     let member = message.mentions.members.first()
     let reason = args.slice(1).join(' ')
     if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
-    if (message.author.id === member.user.id) return message.channel.send(`nooooooooooooooooooooo`)
+    if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
     await member.ban()
     let blogEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
