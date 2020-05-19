@@ -10,6 +10,8 @@ module.exports = {
 
         let mutee = message.mentions.members.first() || message.guild.members.get(args[0])
         if(!mutee) return message.channel.send(`⚠️ No user specified, please mention the user.`)
+
+        if (message.author.id === member.user.id) return message.channel.send(`nooooooooooooooooooooo`)
         
         let reason = args.slice(1).join(" ");
         if(!reason) reason = "No reason given"
