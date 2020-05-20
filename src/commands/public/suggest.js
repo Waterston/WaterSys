@@ -19,7 +19,7 @@ module.exports = {
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
             .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
             .setTitle("Suggestion Submitted")
-            .setDescription(`${message.member}, sucessfully sent your suggestion to further review with the development team!`)
+            .setDescription(`${message.member}, sucessfully sent your suggestion to the development team for further review!`)
 
 
             const suggestionembed = new Discord.MessageEmbed()
