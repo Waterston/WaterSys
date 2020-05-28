@@ -6,7 +6,7 @@ module.exports = {
     category: "info",
     description: "Returns command list",
     run: async (client, message, args) => {
-        let response = fetch.get(`https://groups.roblox.com/v1/groups/5231364`)
+        let response = fetch.get(`https://groups.roblox.com/v1/groups/5231364`).catch(e))
         const whoisembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setTimestamp()
