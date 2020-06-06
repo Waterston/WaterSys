@@ -37,7 +37,7 @@ module.exports = {
         .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
         .setFooter("WaterstonSystems", client.user.displayAvatarURL())
         .setTimestamp()
-        .setDescription(`Please verify your Discord Account with your correct Roblox account at: https://verify.eryn.io/.`)
+        .setDescription(`Please verify your Discord Account with your correct Roblox account at: https://verify.eryn.io/. After you have verified, re-register again.`)
       if (!collector) return message.channel.send(`Verification has timed out.`)
       let emoji = collector.first().emoji.name
       if (emoji === '❌') return message.channel.send(notverifiedembed)
