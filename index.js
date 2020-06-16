@@ -109,9 +109,10 @@ ice!`)
       '5440075': '709094830931836928', //national guard
       '5406532': '709094923722555485', //transportation
       '5406518': '709095030958063616', //public
-      '5772944': '712170487098376272', //dia
+      '5772944': '712170487098376272', //internal affairs
       '5586869': '712170799632744552', //commerce
-      '5406518': '709095030958063616' //public rec
+      '5406518': '709095030958063616', //public recreations
+      '6690972': '722510382853390386' //department of state
     }
     for (let group of auxGroups) {
       roles.push(auxBinds[`${group.group.id}`])
