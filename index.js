@@ -71,7 +71,7 @@ const {
   })
 
   client.on("guildMemberAdd", member =>{
-    const channel = client.channels.cache.find(channel => channel.name === "public-general")
+    const channel = client.channels.cache.find(channel => channel.name === "general")
     const welcomeembed = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
@@ -82,12 +82,14 @@ const {
 ice!`)
     .addField('Roblox Group', `https://www.roblox.com/groups/5231364/State-of-Waterston`)
     .addField('Punishment Database', '*Coming Soon*')
+
     const welcomegeneralembed = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
     .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
     .setTitle("Welcome to the State of Waterston")
     .setDescription(`${member} has joined the State of Waterston! Make sure to review our Server Guidelines and Discord Terms of Service!`)
+
     channel.send(welcomegeneralembed);
     member.send(welcomeembed).catch((error) => {
       return
@@ -99,7 +101,7 @@ ice!`)
       body
     } = await fetch.get(`https://groups.roblox.com/v2/users/${id}/groups/roles`)
     let roles = []
-    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518].includes(g.group.id))
+    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518, 6690972].includes(g.group.id))
     let auxBinds = {
       '5406536': '709094570721280104', //fire department
       '5406514': '709093922453979188', //state patrol
