@@ -4,7 +4,7 @@ let fetch = require('node-superfetch')
 
 module.exports = {
   name: "register",
-  aliases: ['verify', 'reverify'],
+  aliases: ['verify', 'reverify', 'getroles', 'update'],
   category: "Roblox",
   description: "Registers your Roblox account and links it to your Discord account",
   run: async (client, message, args) => {
