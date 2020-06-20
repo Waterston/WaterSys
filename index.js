@@ -101,7 +101,7 @@ ice!`)
       body
     } = await fetch.get(`https://groups.roblox.com/v2/users/${id}/groups/roles`)
     let roles = []
-    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518, 6690972].includes(g.group.id))
+    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518, 6690972, 6744492].includes(g.group.id))
     let auxBinds = {
       '5406536': '709094570721280104', //fire department
       '5406514': '709093922453979188', //state patrol
@@ -114,7 +114,8 @@ ice!`)
       '5772944': '712170487098376272', //internal affairs
       '5586869': '712170799632744552', //commerce
       '5406518': '709095030958063616', //public recreations
-      '6690972': '722510382853390386' //department of state
+      '6690972': '722510382853390386', //department of state
+      '6744492': '724041965800521848' //department of justice
     }
     for (let group of auxGroups) {
       roles.push(auxBinds[`${group.group.id}`])
