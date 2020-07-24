@@ -15,7 +15,7 @@ module.exports = {
     let reason = args.slice(1).join(' ')
     if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
-    await member.ban()
+    await <guild>.members.ban(user);
     let blogEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
