@@ -15,7 +15,7 @@ module.exports = {
         return msg.edit(
         stripIndents`
         🏓 **Pong:** \`${ping}ms\`
-        💓 **API Latency:** \`${Math.round(message.client.ping)}ms\`
+        💓 **API Latency:** \`${Math.round(message.client.ws.ping)}ms\`
         `,
         );
   }
