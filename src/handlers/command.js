@@ -12,9 +12,9 @@ module.exports = (client) => {
     
             if (pull.name) {
                 client.commands.set(pull.name, pull);
-                table.addRow(file, '✅');
+                table.addRow(file, 'ON');
             } else {
-                table.addRow(file, `❌  -> missing a help.name, or help.name is not a string.`);
+                table.addRow(file, `OFF  -> missing a help.name, or help.name is not a string.`);
                 continue;
             }
     
