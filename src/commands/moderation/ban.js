@@ -33,7 +33,7 @@ module.exports = {
       .setTitle("Ban Issued")
       .setDescription(`Sucessfully banned <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(blogEmbed)
     return message.channel.send(banembed)
   }
