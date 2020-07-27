@@ -7,7 +7,7 @@ module.exports = {
     description: "Returns the specified user's profile picture",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-        let member = message.mentions.members.first() || msg.member
+        let member = message.mentions.members.first() || message.member
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         //.setAuthor(${member.user.username}, member.user.avatarURL)
