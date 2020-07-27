@@ -13,7 +13,7 @@ module.exports = {
         .setAuthor(message.author.username, message.author.displayAvatarURL())
         .setTitle("Avatar")
         .setTimestamp()
-        .setImage(message.author.avatarURL({ dynamic:true }))
+        .setImage(message.author.avatarURL({ format: 'png', dynamic: true, size: 512 }))
         message.channel.send(embed)
     }
 }
