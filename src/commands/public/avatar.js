@@ -10,10 +10,11 @@ module.exports = {
         let user = message.mentions.users.first() || message.author;
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setAuthor(message.author.username, message.author.displayAvatarURL())
+        .setAuthor(message.user.username, message.user.displayAvatarURL())
         .setTitle("Avatar")
+        .setImage(message.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
+        .setFooter("WaterstonSystems", client.user.displayAvatarURL())
         .setTimestamp()
-        .setImage(message.author.avatarURL({ format: 'png', dynamic: true, size: 512 }))
         message.channel.send(embed)
     }
 }
