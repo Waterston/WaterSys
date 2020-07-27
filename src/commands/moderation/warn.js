@@ -29,7 +29,7 @@ module.exports = {
       .setTitle(`Warning Log Issued`)
       .setDescription(`**User Warned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${warnObj.id}`)
       .setTimestamp()
-      .setFooter(`WaterstonSystems`, client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(logEmbed)
     let warnedEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
@@ -39,7 +39,7 @@ module.exports = {
       .setTitle(`Warning Log Issued`)
       .setDescription(`Sucessfully issued a warning to <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     return message.channel.send(warnedEmbed)
 
   }
