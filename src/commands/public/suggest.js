@@ -17,7 +17,7 @@ module.exports = {
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Suggestion Submitted")
             .setDescription(`${message.member}, sucessfully sent your suggestion to the development team for further review!`)
 
@@ -26,7 +26,7 @@ module.exports = {
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("New Suggestion")
             .addField('Submitted by:', `${message.member}`)
             .addField('Suggestion Type:', rMember)

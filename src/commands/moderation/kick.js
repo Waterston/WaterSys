@@ -31,7 +31,7 @@ module.exports = {
       .setTitle("Kick Log Issued")
       .setDescription(`**User Kicked:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${kickObj.id}`)
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     let kickedEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
@@ -40,7 +40,7 @@ module.exports = {
       .setTitle("Kick Log Issued")
       .setDescription(`Sucessfully kicked <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(logEmbed)
     return message.channel.send(kickedEmbed)
   }

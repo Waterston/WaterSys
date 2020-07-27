@@ -18,7 +18,7 @@ module.exports = {
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Announcement Submitted")
             .setDescription(`${message.member}, sucessfully sent your announcement to the directed channel!`)
 
