@@ -13,7 +13,7 @@ module.exports = {
         .setAuthor(message.author.username, message.author.displayAvatarURL())
         .setTitle("Avatar")
         .setTimestamp()
-        .setImage(user.displayAvatarURL)
+        .setImage(`${user.displayAvatarURL}`, true)
         message.channel.send(embed)
     }
 }
