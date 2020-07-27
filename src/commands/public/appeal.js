@@ -16,7 +16,7 @@ module.exports = {
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Appeal Request")
             .setDescription(`${message.member}, sucessfully sent your appeal to our Discord Moderation team for further review.`)
 
@@ -25,7 +25,7 @@ module.exports = {
             .setColor("#0084ff")
             .setTimestamp()
             .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-            .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+            .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Appeal Request")
             .addField('Submitted by:', `${message.member}`)
             .addField('Appeal Type:', rMember)
