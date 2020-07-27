@@ -7,12 +7,12 @@ module.exports = {
     description: "Returns the specified user's profile picture",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-        let user = message.mentions.users.first() || message.author;
+        let member = msg.mentions.members.first() || msg.member
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setAuthor(message.user.username, message.user.displayAvatarURL())
+        .setAuthor(${member.user.username}, member.user.avatarURL)
         .setTitle("Avatar")
-        .setImage(message.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
+        .setImage(member.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setFooter("WaterstonSystems", client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
