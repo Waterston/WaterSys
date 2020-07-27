@@ -27,7 +27,7 @@ module.exports = {
         .setTitle(`Mute Issued`)
         .setDescription(`**User Muted:** <@${mutee.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
         .setTimestamp()
-        .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+        .setFooter(client.user.username, client.user.displayAvatarURL()) 
         
         let mutedlogembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
@@ -37,7 +37,7 @@ module.exports = {
         .setTitle(`Mute Issued`)
         .setDescription(`Sucessfully issued a mute to <@${mutee.user.id}> by <@${message.author.id}> for **${reason}.**`)
         .setTimestamp()
-        .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+        .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
         mutee.roles.add(muterole.id).catch(console.error).then(() => {
             message.channel.send(mutedlogembed)
