@@ -8,4 +8,4 @@ The repository for the WaterstonSystem, the custom Discord bot for Roblox verifi
 ### Installation
 WaterstonSystems is powered by [Node.js](https://nodejs.org/) and [Discord.js](https://discord.js.org/).
 
-More document coming soon.
+The bot is mainly for private use, and as such, we will not provide instruction on how to install for your own use.
