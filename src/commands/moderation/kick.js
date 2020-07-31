@@ -21,7 +21,7 @@ module.exports = {
       reason: reason,
       id: `k${Math.random().toString(36).substr(2, 9)}`
     }
-    await member.kick()
+    await member.kick({ reason: '${reason}' })
     db.push(`logs.${message.guild.id}`, kickObj)
     let logEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
