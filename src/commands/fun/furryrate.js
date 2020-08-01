@@ -10,8 +10,8 @@ module.exports = {
         let member = message.mentions.members.first() || message.member
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setTitle(`Placeholder Rate`)
-        .setDescription(`<@${member.user.id}> is {placeholder} placeholder.`)
+        .setTitle(`Furry Rate`)
+        .setDescription(`<@${member.user.id}> is ${Math.floor(Math.random() * 101)}% furry.`)
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
