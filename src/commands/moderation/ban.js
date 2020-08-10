@@ -22,7 +22,11 @@ module.exports = {
         dynamic: true
       }))
       .setTitle("Ban Issued")
-      .setDescription(`**User Banned:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
+      .setDescription(`**User Banned:** <@${member.user.id}>`)
+      .addFields(
+		  { name: 'Reason', value: '${reason}', inline: true },
+		  { name: 'Moderator', value: '<@${message.author.id}', inline: true },
+	    )
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
     let banembed = new Discord.MessageEmbed()
@@ -31,7 +35,11 @@ module.exports = {
         dynamic: true
       }))
       .setTitle("Ban Issued")
-      .setDescription(`Sucessfully banned <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
+      .setDescription(`Successfully banned <@${member.user.id}>.`)
+      .addFields(
+		  { name: 'Reason', value: '${reason}', inline: true },
+		  { name: 'Moderator', value: '<@${message.author.id}', inline: true },
+	    )    
       .setTimestamp()
       .setFooter(client.user.username, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(blogEmbed)
