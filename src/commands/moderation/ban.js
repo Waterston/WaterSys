@@ -25,7 +25,7 @@ module.exports = {
       .setDescription(`**User Banned:** <@${member.user.id}>`)
       .addFields(
 		  { name: 'Reason', value: `${reason}`, inline: true },
-		  { name: 'Moderator', value: `<@${message.author.id}`, inline: true },
+		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
 	    )
       .setTimestamp()
       .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
@@ -38,7 +38,7 @@ module.exports = {
       .setDescription(`Successfully banned <@${member.user.id}>.`)
       .addFields(
 		  { name: 'Reason', value: `${reason}`, inline: true },
-		  { name: 'Moderator', value: `<@${message.author.id}`, inline: true },
+		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
 	    )    
       .setTimestamp()
       .setFooter(client.user.username, client.user.displayAvatarURL()) 
