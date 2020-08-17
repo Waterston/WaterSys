@@ -21,7 +21,7 @@ module.exports = {
       reason: reason,
       id: `k${Math.random().toString(36).substr(2, 9)}`
     }
-    await member.kick(reason)
+    await member.kick({ reason: '${reason}' })
     db.push(`logs.${message.guild.id}`, kickObj)
     let logEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
@@ -38,7 +38,11 @@ module.exports = {
         dynamic: true
       }))
       .setTitle("Kick Log Issued")
-      .setDescription(`Sucessfully kicked <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
+      .setDescription(`Sucessfully kicked <@${member.user.id}>.`)
+      .addFields(
+		  { name: 'Reason', value: `${reason}`, inline: true },
+		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
+	    )
       .setTimestamp()
       .setFooter(client.user.username, client.user.displayAvatarURL()) 
     client.channels.resolve('709074878912790529').send(logEmbed)
