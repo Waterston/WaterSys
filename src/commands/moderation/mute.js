@@ -8,7 +8,7 @@ module.exports = {
     run: async (client, message, args) => {
         if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 
-        let mutee = message.mentions.members.first() || message.guild.members.get(args[0])
+        let mute = message.mentions.members.first() || message.guild.members.get(args[0])
         if(!mutee) return message.channel.send(`⚠️ No user specified, please mention the user.`)
 
 
@@ -28,14 +28,17 @@ module.exports = {
         .setDescription(`**User Muted:** <@${mutee.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
-        
         let mutedlogembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
         .setTitle(`Mute Issued`)
-        .setDescription(`Sucessfully issued a mute to <@${mutee.user.id}> by <@${message.author.id}> for **${reason}.**`)
+        .setDescription(`Sucessfully issued a mute to <@${mutee.user.id}>.`)
+        .addFields(
+		  { name: 'Reason', value: `${reason}`, inline: true },
+		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
+	    )
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
