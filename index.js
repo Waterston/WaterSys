@@ -78,8 +78,7 @@ const {
     .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
     .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
     .setTitle("Welcome to the State of Waterston")
-    .setDescription(`Hi, ${member}. We're happy that you decided to join the State of Waterston Discord Server! While you are here, please review our Server Guidelines and Discord Terms of Serv
-ice!`)
+    .setDescription(`Hi, ${member}. We're happy that you decided to join the State of Waterston Discord Server! While you are here, please review our Server Guidelines and Discord Terms of Service!`)
     .addField('Roblox Group', `https://www.roblox.com/groups/5231364/State-of-Waterston`)
     .addField('Punishment Database', '*Coming Soon*')
 
@@ -101,23 +100,24 @@ ice!`)
       body
     } = await fetch.get(`https://groups.roblox.com/v2/users/${id}/groups/roles`)
     let roles = []
-    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518, 6690972, 7388100, 7324296, 6744492].includes(g.group.id))
+    let auxGroups = body.data.filter(g => [5406536, 5406514, 5440073, 5586877, 5557949, 5440075, 5406532, 5406518, 5772944, 5586869, 5406518, 6690972, 7388100, 7324296, 6744492, 7456091].includes(g.group.id))
     let auxBinds = {
       '5406536': '709094570721280104', //fire department
       '5406514': '709093922453979188', //state patrol
-      '5440073': '709094155598561362', //sherrif office
+      '5440073': '709094155598561362', //sheriff office
       '5586877': '709094660231921690', //corrections
       '5557949': '709094267661844540', //federal defense
       '5440075': '709094830931836928', //national guard
       '5406532': '709094923722555485', //transportation
       '5406518': '709095030958063616', //public
-      '5772944': '712170487098376272', //dia
+      '5772944': '712170487098376272', //internal affairs
       '5586869': '712170799632744552', //commerce
       '5406518': '709095030958063616', //public rec
       '6690972': '722510382853390386', //department of state
       '7388100': '742546484716765265', //bcso swat
-      '7324296': '740676471236067479', //wps
-      '6744492': '724041965800521848' //department of justice
+      '7324296': '740676471236067479', //postal serv
+      '6744492': '724041965800521848', //department of justice
+      '7456091': '735589774248902716', //courts  
   
     }
     for (let group of auxGroups) {
