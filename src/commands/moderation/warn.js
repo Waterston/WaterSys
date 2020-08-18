@@ -37,7 +37,11 @@ module.exports = {
         dynamic: true
       }))
       .setTitle(`Warning Log Issued`)
-      .setDescription(`Sucessfully issued a warning to <@${member.user.id}> by <@${message.author.id}> for **${reason}.**`)
+      .setDescription(`Sucessfully issued a warning to <@${member.user.id}>.`)
+      .addFields(
+		  { name: 'Reason', value: `${reason}`, inline: true },
+		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
+	    )
       .setTimestamp()
       .setFooter(client.user.username, client.user.displayAvatarURL()) 
     return message.channel.send(warnedEmbed)
