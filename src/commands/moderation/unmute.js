@@ -36,7 +36,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        mutee.roles.remove(muterole.id).catch(console.error).then(() => {
+        mutee.roles.remove(muterole.id, reason).catch(console.error).then(() => {
             message.channel.send(unmutedlogembed)
             return client.channels.resolve('709074878912790529').send(unmutedembed)
         })
