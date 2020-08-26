@@ -72,7 +72,7 @@ module.exports = {
       }
     } catch (e) {
       if (e.body && e.body.status === "error") {
-        return message.channel.send(`${e.body.error === "User not found." ? "It appears that you don't have a linked Roblox account. Please go to https://verify.eryn.io/, verify, and try again." : e.body.error}`)
+        return message.channel.send(`${e.body.error === "User not found." ? "It appears that you don't have a linked Roblox account. Please go to https://verify.eryn.io/ and follow instructions. Then, type `!register` again." : e.body.error}`)
       } else {
         console.log(e)
       }
