@@ -42,7 +42,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        member.roles.add(muterole.id).catch(console.error).then(() => {
+        member.roles.add(muterole.id, reason).catch(console.error).then(() => {
             message.channel.send(mutedlogembed)
             return client.channels.resolve('709074878912790529').send(mutedembed)
         })
