@@ -40,7 +40,7 @@ module.exports = {
         .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
         .addField("Region", region[message.guild.region], true)
         .addField("Members | Bots", `${message.guild.members.cache.filter(member => !member.user.bot).size} | ${message.guild.members.cache.filter(member => member.user.bot).size}`, true)
-        .addField("Verification Level", verifLevels[message.guild.cache.verificationLevel], true)
+        .addField("Verification Level", verifLevels[guild.verificationLevel], true)
         .addField("Total Channels", message.guild.channels.cache.size, true)
         .addField('Text Channels',`${message.guild.channels.cache.filter(m => m.type === 'text').size}`,true)
         .addField('Voice Channels',`${message.guild.channels.cache.filter(m => m.type === 'voice').size}`,true)
