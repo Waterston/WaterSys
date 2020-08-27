@@ -4,7 +4,7 @@ let fetch = require('node-superfetch')
 
 module.exports = {
   name: "register",
-  aliases: ['verify', 'reverify', 'getroles', 'update'],
+  aliases: ['verify', 'reverify', 'getroles', 'update', 'updateroles'],
   category: "Roblox",
   description: "Registers your Roblox account and links it to your Discord account",
   run: async (client, message, args) => {
@@ -12,6 +12,13 @@ module.exports = {
       let {
         body
       } = await fetch.get(`https://verify.eryn.io/api/user/${message.author.id}`)
+          } catch (e) {
+      //if (e.body && e.body.status === "504") {
+      //  return message.channel.send(`${e.body.error === "Gateway Time-out." ? "There was an issue in retrieving user data. Please try again later. If this issue still continues, contact a server staff." : e.body.error}`)
+      //} else {
+      //  console.log(e)
+      //  }
+      //}
       let thumbnail = await getAccountThumbnail(body.robloxId)
       let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#0084ff")
