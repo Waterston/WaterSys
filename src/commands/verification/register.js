@@ -12,7 +12,7 @@ module.exports = {
       let {
         body
       } = await fetch.get(`https://verify.eryn.io/api/user/${message.author.id}`)
-          } catch (e) {
+      //    } catch (e) {
       //if (e.body && e.body.status === "504") {
       //  return message.channel.send(`${e.body.error === "Gateway Time-out." ? "There was an issue in retrieving user data. Please try again later. If this issue still continues, contact a server staff." : e.body.error}`)
       //} else {
