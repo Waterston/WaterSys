@@ -27,6 +27,6 @@ module.exports = {
         .setDescription(Owoify(text))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
-        message.channel.send(embed).then(() => channel.stopTyping()
+        message.channel.send(embed).then(() => channel.stopTyping())
     }
 }
