@@ -30,6 +30,6 @@ module.exports = {
         for (i = 0; i < (times + 1); i++) {
           message.channel.send(embed)
         }
-        message.channel.stopTyping())
+        message.channel.stopTyping()
     }
 }
