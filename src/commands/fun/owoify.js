@@ -22,10 +22,11 @@ module.exports = {
     usage: "<message>",
     run: async (client, message, args) => {
         const embed = new Discord.MessageEmbed()
+        channel.startTyping()
         .setColor("#0084ff")
         .setDescription(Owoify(message))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
-        message.channel.send(embed)
+        message.channel.send(embed).then(() => channel.stopTyping())
     }
 }
