@@ -10,7 +10,8 @@ module.exports = {
         let member = message.mentions.members.first() || message.member
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
-        .setTitle(`${member.user.tag}'s Avatar`)
+        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.displayAvatarURL())
+        .setTitle(`${member.user.tag}#${message.author.discriminator}'s Avatar`)
         .setImage(member.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
