@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: "uptime",
     category: "public",
-    description: "Shows BOT uptime",
+    description: "Shows the bot uptime",
     usage: "<mention, id>",
     run: async (client, message, args) => {
         function duration(ms) {
@@ -20,7 +20,7 @@ module.exports = {
         .setTimestamp()
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
-        .setTitle("${client.user.username} Uptime")
+        .setTitle(`${client.user.username} Uptime`)
         .setDescription(`${duration(client.uptime)}`)
         message.channel.send(uptimeembed)
     
