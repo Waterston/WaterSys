@@ -20,3 +20,4 @@ module.exports = {
           targetChannel.send(saytext);
           message.delete();
       }
+    }
