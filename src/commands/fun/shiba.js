@@ -11,6 +11,7 @@ module.exports = {
         const body = await fetch('https://shibe.online/api/shibes').then(res => res.json())
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
+        .setAuthor(client.author.username, client.author.displayAvatarURL())
         .setImage(body[0])
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
