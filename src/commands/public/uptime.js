@@ -18,9 +18,9 @@ module.exports = {
         const uptimeembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setTimestamp()
-        .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
-        .setTitle("WaterstonBotv1 Uptime")
+        .setTitle("${client.user.username} Uptime")
         .setDescription(`${duration(client.uptime)}`)
         message.channel.send(uptimeembed)
     
