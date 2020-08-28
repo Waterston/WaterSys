@@ -31,7 +31,6 @@ module.exports = {
         "russia": ":flag_ru: Russia",
         "southafrica": ":flag_za:  South Africa"
     };        
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.guild.name, message.guild.iconURL)
         .setColor("#0084ff")
