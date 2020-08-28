@@ -32,7 +32,7 @@ module.exports = {
         "southafrica": ":flag_za:  South Africa"
     };        
         const embed = new Discord.MessageEmbed()
-        .setAuthor(message.guild.name, message.guild.iconURL)
+        .setAuthor(message.guild.name, message.guild.iconURL())
         .setColor("#0084ff")
         .addField("Name", message.guild.name, true)
         .addField("Server ID", message.guild.id, true)
@@ -45,7 +45,7 @@ module.exports = {
         .addField('Voice Channels',`${message.guild.channels.cache.filter(m => m.type === 'voice').size}`,true)
         .addField("Roles", message.guild.roles.cache.size, true)
         .addField("Creation Date", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
-        .setThumbnail(message.guild.iconURL)
+        .setThumbnail(message.guild.iconURL({ format: 'png', dynamic: true, size: 256 }))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
