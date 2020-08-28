@@ -23,6 +23,7 @@ module.exports = {
     run: async (client, message, args) => {
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
+        .setAuthor(message.author.username + "#" + message.author.discriminator, message.author.displayAvatarURL())
         .setDescription(Owoify(message))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
