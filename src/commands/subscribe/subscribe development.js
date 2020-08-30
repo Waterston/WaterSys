@@ -2,11 +2,14 @@ const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
 
 module.exports = {
-    name: "subscribe",
+    name: "subscribe development",
     category: "public",
     description: "public",
     run: async (client, message, args) => {
         let subscriberole = message.guild.roles.cache.find(r => r.name === "Development Subscriber");
+
+        let reason = args.slice(1).join(" ");
+        if(!reason) reason = "No reason given"
 
         let embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
@@ -18,7 +21,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        message.author.roles.add(subscriberole.id).catch(console.error).then(() => {
+        message.author.roles.add(subscriberole.id, reason).catch(console.error).then(() => {
             message.channel.send(embed)
         })
   }
