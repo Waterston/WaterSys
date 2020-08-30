@@ -2,7 +2,7 @@ const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
 
 module.exports = {
-    name: "subscribe development",
+    name: "subscribe",
     category: "public",
     description: "public",
     run: async (client, message, args) => {
