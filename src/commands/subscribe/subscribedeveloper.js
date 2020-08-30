@@ -18,7 +18,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        message.author.roles.add(role.id).catch(console.error).then(() => {
+        message.author.roles.add(`748101256064794694`).catch(console.error).then(() => {
             message.channel.send(embed)
         })
   }
