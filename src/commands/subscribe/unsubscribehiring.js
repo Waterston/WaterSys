@@ -6,7 +6,7 @@ module.exports = {
     category: "public",
     description: "public",
     run: async (client, message, args) => {
-        let role = message.guild.roles.cache.find(r => r.name === "Department Hiring");
+        let subscriberole = message.guild.roles.cache.find(r => r.name === "Department Hiring");
 
         let embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
@@ -18,7 +18,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        message.author.roles.remove(role.id).catch(console.error).then(() => {
+        message.author.roles.remove(subscriberole.id).catch(console.error).then(() => {
             message.channel.send(embed)
         })
   }

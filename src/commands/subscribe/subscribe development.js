@@ -2,7 +2,7 @@ const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
 
 module.exports = {
-    name: "subscribe",
+    name: "subscribe development",
     category: "public",
     description: "public",
     run: async (client, message, args) => {
@@ -18,7 +18,7 @@ module.exports = {
         .setTimestamp()
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
-        message.author.roles.add(subscriberole).catch(console.error).then(() => {
+        message.author.roles.add(subscriberole.id).catch(console.error).then(() => {
             message.channel.send(embed)
         })
   }
