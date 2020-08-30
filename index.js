@@ -21,7 +21,7 @@ const {
   });
   
   client.on("ready", () => {
-    console.log(`${client.user.username} is now connected to servers and commands loaded.`);
+    console.log(`${client.user.username} is now connected to ${client.guilds.cache.size} server(s) with commands loaded.`);
     client.user.setPresence({
       status: "online",
       activity: {

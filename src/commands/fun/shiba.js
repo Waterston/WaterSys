@@ -1,18 +1,18 @@
 const Discord = require('discord.js');
 
+const fetch = require('node-fetch')
+
 module.exports = {
-    name: "gayrate",
-    aliases: ['gay', 'gr'],
+    name: "shiba",
+    aliases: ['shibe', 'doge'],
     category: "fun",
-    description: "See what percentage of the specified user is gay",
-    usage: "<mention, id>",
+    description: "Get a random picture of a Shiba Inu dog.",
     run: async (client, message, args) => {
-        let member = message.mentions.members.first() || message.member
+        const body = await fetch('https://shibe.online/api/shibes').then(res => res.json())
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
-        .setTitle(`Gay Rate`)
-        .setDescription(`<@${member.user.id}> is ${Math.floor(Math.random() * 101)}% gay. :rainbow_flag:`)
+        .setImage(body[0])
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
