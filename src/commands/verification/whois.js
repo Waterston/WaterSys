@@ -11,11 +11,13 @@ module.exports = {
 
         //Get Response of Body
         const body = await fetch(`https://verify.eryn.io/api/user/${message.author.id}`).then(res => res.json())
+        const StatusBio = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
+        const JoinDate = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}`).then(res => res.json())
 
         //Create Sending Embed Completion
         const whoembed = new Discord.MessageEmbed()
         .setTitle(`Roblox Username: ${body.robloxUsername}`)
-        .setDescription(`Fuck Pear too, all my homies hate Pear`)
+        .setDescription(`**Status:**\n${StatusBio}\n\n**Creation Date:**\n${JoinDate}`)
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
 
@@ -24,3 +26,8 @@ module.exports = {
         message.channel.send(whoembed)
     }
 }
+
+
+
+
+
