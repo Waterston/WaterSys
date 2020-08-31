@@ -10,14 +10,14 @@ module.exports = {
     run: async (client, message, args) => {
 
         //Get Response of Body
-        let body = await fetch(`https://verify.eryn.io/api/user/${message.author.id}`).then(res => res.json())
+        const body = await fetch(`https://verify.eryn.io/api/user/${message.author.id}`).then(res => res.json())
         let StatusBio = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
         let JoinDate = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}`).then(res => res.json())
 
         //Create Sending Embed Completion
         const whoembed = new Discord.MessageEmbed()
         .setTitle(`Roblox Username: ${body.robloxUsername}`)
-        .setDescription(`**Status:**\n${StatusBio}\n\n**Creation Date:**\n${JoinDate}`)
+        .setDescription(`**Status:**\n${StatusBio.status}\n\n**Creation Date:**\n${JoinDate.created}`)
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
 
