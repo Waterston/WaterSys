@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
         //Get Response of Body
-        const body = await fetch(`https://verify.eryn.io/api/user/${message.author.id}`).then(res => res.json())
+        let body = await fetch(`https://verify.eryn.io/api/user/${message.author.id}`).then(res => res.json())
         let StatusBio = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
         let JoinDate = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}`).then(res => res.json())
 
