@@ -1,13 +1,16 @@
 let Discord = require('discord.js')
 let db = require('quick.db')
 
+// Role list for permissions
+let modRole = message.guild.roles.find("name", "Discord Moderator");
+let traineeRole = message.guild.roles.find("name", "Trial Moderator");
 
 module.exports = {
   name: "kick",
   category: "Moderation",
   description: "Remove a user from the server",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) /*Discord Mod*/ or (!message.member.roles.cache.get('747150058612326423')) /*Trial Mod*/ return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (message.member.roles.has(modRole.id) || message.member.roles.has(traineeRole.id)) { return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     }))
