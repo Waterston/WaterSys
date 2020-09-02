@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: "serverinfo",
-    aliases: ['sinfo', 'server'],
+    name: "links",
+    aliases: ['link', 'invite', 'roblox'],
     category: "public",
     description: "Retrieve information for the current server",
     usage: "<mention, id>",
@@ -19,6 +19,6 @@ module.exports = {
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
-}
-}
+        }
+    }
 }
