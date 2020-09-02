@@ -7,7 +7,7 @@ module.exports = {
     description: "Retrieve information for the current server",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-       if ( message.guild.id === '659451316707524618') {
+       if ( message.guild.id === '659451316707524618') { // Makes this command only work for the main server
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.guild.name, message.guild.iconURL())
         .setColor("#0084ff")
@@ -19,5 +19,6 @@ module.exports = {
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
-    }
+}
+}
 }
