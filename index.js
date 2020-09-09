@@ -71,7 +71,7 @@ const {
   })
 
   client.on("guildMemberAdd", member =>{
-    const channel = client.channels.cache.find(channel => channel.name === "general")
+    const channel = client.channels.cache.find(channel => channel.name === "public-lounge")
     const welcomeembed = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
