@@ -16,3 +16,5 @@ module.exports = {
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
+    }
+}
