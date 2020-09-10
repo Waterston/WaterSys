@@ -5,6 +5,7 @@ module.exports = {
     category: "public",
     description: "Shows the bot uptime",
     usage: "<mention, id>",
+    cooldown: 5,
     run: async (client, message, args) => {
         function duration(ms) {
             const sec = Math.floor((ms / 1000) % 60).toString()
