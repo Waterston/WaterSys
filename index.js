@@ -106,7 +106,8 @@ client.on("messageDelete", async message =>{
     .addField("Author: ", message.author.tag)
     .addField("Occurance: ", message.channel)
      
-     let logchannel = message.guild.channels.find(c => c.name === "yeet")
+     
+     const logchannel = client.channels.cache.find(channel => channel.name === "yeet")
      if (!logchannel) return;
     
      logchannel.send(mDelete);
