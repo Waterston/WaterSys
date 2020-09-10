@@ -1,6 +1,6 @@
 const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
-const ms = require('ms')
+let ms = require('ms')
 
 module.exports = {
     name: "mute",
