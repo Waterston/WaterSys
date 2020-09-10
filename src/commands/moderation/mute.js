@@ -26,9 +26,6 @@ module.exports = {
 		member.roles.remove(muterole.id);
 		message.channel.send(`nmmuted`)
 	  }, ms(time));
-	    
-	    
-	    break;
-	    
+   
   }
 }; 
