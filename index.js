@@ -103,11 +103,12 @@ client.on("messageDelete", async message =>{
     .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
     .setTitle("Message Deleted")
     .setDescription(message.content)
+    .addField("Message Content: ", message.conten)
     .addField("Author: ", message.author.tag)
     .addField("Occurance: ", message.channel)
      
      
-     const logchannel = client.channels.cache.find(channel => channel.name === "yeet")
+     const logchannel = client.channels.cache.find(channel => channel.name === "message-logs")
      if (!logchannel) return;
     
      logchannel.send(mDelete);
