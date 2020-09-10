@@ -9,13 +9,13 @@ module.exports = {
 	guildOnly: true,
 	usage: "<mention, id>",
     run: async (client, message, args) => {
-	if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
-	if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
+        if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
           timeout: 10000
        }))
-	if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
-	const member = message.mentions.members.first()
-	if (!member) return
+       let member = message.mentions.members.first()
+
+        if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
 	    
 	let reason = args.slice(2).join(" ");
         if(!reason) reason = "No reason given"
