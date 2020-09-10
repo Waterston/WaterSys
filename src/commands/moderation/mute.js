@@ -1,13 +1,13 @@
 const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
-let ms = require('ms')
+const ms = require('ms')
 
 module.exports = {
     name: "mute",
     category: "moderation",
     description: "Mutes a user",
     run: async (client, message, args) => {
-	const member = message.guild.member(message.mentions.user.first() || message.guild.members[1]))
+	const member = message.mentions.members.first()
 	if (!member) return
 	
 	let muterole = message.guild.roles.cache.find(r => r.name === "Muted");
