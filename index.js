@@ -95,6 +95,25 @@ const {
     });
 })
 
+client.on("messageDelete", async message =>{
+     const mDelete = new Discord.MessageEmbed()
+    .setColor("#0084ff")
+    .setTimestamp()
+    .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+    .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+    .setTitle("Message Deleted")
+    .setDescription(message.content)
+    .setThumbnail(message.avatar.url)
+    .addField("Author: ", message.author.tag)
+    .addField("Occurance: ", message.channel)
+     
+     let logchannel = message.guild.channels.find(c => c.name === "yeet")
+     if (!logchannel) return;
+    
+     logchannel.send(mDelete);
+
+})
+
   async function getAuxillaryGroups(id) {
     let {
       body
