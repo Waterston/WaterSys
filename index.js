@@ -102,8 +102,7 @@ client.on("messageDelete", async message =>{
     .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
     .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
     .setTitle("Message Deleted")
-    .setDescription(message.content)
-    .addField("Message Content: ", message.conten)
+    .addField("Message Content: ", message.content)
     .addField("Author: ", message.author.tag)
     .addField("Occurance: ", message.channel)
      
