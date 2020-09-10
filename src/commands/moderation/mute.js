@@ -11,7 +11,7 @@ module.exports = {
 	if (!member) return
 	
 	let muterole = message.guild.roles.cache.find(r => r.name === "Muted");
-	if (!muterole) return message.reply("mr nil"
+	if (!muterole) return message.reply("mr nil")
 	
 	let time = args[2];
 	if (!time){
