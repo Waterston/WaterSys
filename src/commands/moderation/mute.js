@@ -20,7 +20,7 @@ module.exports = {
 	    
 	 member.roles.add(muterole.id)
 	    
-	message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`};
+	message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`);
 	    
 	 setTimeout(function(){
 		member.roles.remove(muterole.id);
