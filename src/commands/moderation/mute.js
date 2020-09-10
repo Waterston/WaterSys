@@ -24,7 +24,7 @@ module.exports = {
 	    
 	 setTimeout(function(){
 		member.roles.remove(muterole.id);
-		message.channel.send(`nmmuted`
+		message.channel.send(`nmmuted`)
 	  }, ms(time));
 	    
 	    
