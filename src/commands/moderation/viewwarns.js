@@ -5,6 +5,8 @@ module.exports = {
   name: "viewwarns",
   category: "Moderation",
   description: "Lets you view warnings for a user",
+  guildOnly: true,
+	usage: "<mention, id>",
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`⚠️ Invalid user.`).then(r => r.delete({

@@ -5,7 +5,9 @@ let ms = require('ms')
 module.exports = {
     name: "mute",
     category: "moderation",
-    description: "Mutes a user",
+	description: "Mutes a user",
+	guildOnly: true,
+	usage: "<mention, id>",
     run: async (client, message, args) => {
 	const member = message.mentions.members.first()
 	if (!member) return

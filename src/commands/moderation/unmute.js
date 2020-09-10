@@ -4,7 +4,9 @@ let Discord = require('discord.js')
 module.exports = {
     name: "unmute",
     category: "moderation",
-    description: "Unmutes a user",
+    description: "Unmutes the specified user",
+    guildOnly: true,
+    usage: "<mention, id>",
     run: async (client, message, args) => {
         if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 

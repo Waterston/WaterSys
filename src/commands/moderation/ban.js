@@ -6,6 +6,8 @@ module.exports = {
   name: "ban",
   category: "Moderation",
   description: "Bans a user from the server",
+  guildOnly: true,
+  usage: "<mention, id>",
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({

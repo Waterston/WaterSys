@@ -4,7 +4,9 @@ let db = require('quick.db')
 module.exports = {
   name: "viewkicks",
   category: "Moderation",
-  description: "Lets you view kicks for a user",
+  description: "Lets you view kicks for a specified user",
+  guildOnly: true,
+	usage: "<mention, id>",
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
