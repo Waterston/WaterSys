@@ -163,16 +163,14 @@ client.on("messageDelete", async message =>{
   
   client.on("message", async message => {
     //Blacklist Word Script
-    let blacklisted = ['rape', 'nigga', 'nig', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit'];
+    let blacklisted = ['rape', 'nigga', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit'];
     let foundInText = false;
       for (var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
       }
-      
                 if (foundInText) {
                     message.delete();
-                    message.channel.send(`Do not send blacklisted text. ${message.author}`)
-                    message.react('🤡')
+                    message.channel.send(`${message.author} Do not send blacklisted text.`).then(r => r.delete({timeout: 10000}))
                 }
     
     const prefix = "!";
