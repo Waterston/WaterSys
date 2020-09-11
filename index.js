@@ -162,6 +162,8 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
+      
+      message.react('🤡')
     //Blacklist Word Script
     let blacklisted = ['rape', 'nigga', 'nig', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit'];
     let foundInText = false;
@@ -172,6 +174,7 @@ client.on("messageDelete", async message =>{
                 if (foundInText) {
                     message.delete();
                     message.channel.send(`Do not send blacklisted text. ${message.author}`)
+                    message.react('🤡')
                 }
     
     const prefix = "!";
@@ -187,8 +190,6 @@ client.on("messageDelete", async message =>{
     if (command)
       command.run(client, message, args);
       
-          //Spike Pears Drink with Vodka Script
-    if (message.author.id === 566044959090802690)
         message.react('🤡')
   });
   
