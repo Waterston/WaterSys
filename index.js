@@ -170,7 +170,7 @@ client.on("messageDelete", async message =>{
       
                 if (foundInText) {
                     message.delete();
-                    message.channel.send('Blacklisted Test started by TheFakePear')
+                    message.channel.send(`Do not send blacklisted text. ${member}`)
                 }
       
       
