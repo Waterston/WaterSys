@@ -173,9 +173,6 @@ client.on("messageDelete", async message =>{
                     message.delete();
                     message.channel.send(`Do not send blacklisted text. ${message.author}`)
                 }
-    //Spike Pears Drink with Vodka Script
-    if (!message.author.id === 137663615657312256)
-        message.react('🤡')
     
     const prefix = "!";
     if (message.author.bot) return;
@@ -189,6 +186,10 @@ client.on("messageDelete", async message =>{
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     if (command)
       command.run(client, message, args);
+      
+          //Spike Pears Drink with Vodka Script
+    if (message.author.id === 566044959090802690)
+        message.react('🤡')
   });
   
   client.login(process.env.TOKEN);
