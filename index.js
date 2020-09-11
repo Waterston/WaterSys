@@ -162,8 +162,6 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
-      
-      message.react('🤡')
     //Blacklist Word Script
     let blacklisted = ['rape', 'nigga', 'nig', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit'];
     let foundInText = false;
