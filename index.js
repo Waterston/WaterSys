@@ -162,6 +162,18 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
+    let blacklisedwords = ['fuck', 'ass'];
+    let foundInText = false;
+      for (var i in blacklisted) {
+        if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
+      }
+      
+                if (foundInText) {
+                    message.delete();
+                    message.channel.send('Blacklisted Test started by TheFakePear')
+                }
+      
+      
     const prefix = "!";
     if (message.author.bot) return;
     if (!message.guild) return;
