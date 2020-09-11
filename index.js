@@ -162,7 +162,7 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
-    let blacklisted = ['fuck', 'ass'];
+    let blacklisted = ['rape', 'nigga', 'nig', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cunt', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm'];
     let foundInText = false;
       for (var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
