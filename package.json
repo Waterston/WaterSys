@@ -1,6 +1,6 @@
 {
 	"name": "waterstonbotv1",
-	"version": "2.8.7",
+	"version": "2.9.0",
 	"engines": {
 		"node": "12.x"
 	},
