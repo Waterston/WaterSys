@@ -3,6 +3,7 @@ let db = require('quick.db')
 
 module.exports = {
   name: "viewkicks",
+  aliases: ['kicks', 'kicklogs'],
   category: "Moderation",
   description: "Lets you view kicks for a specified user",
   guildOnly: true,
