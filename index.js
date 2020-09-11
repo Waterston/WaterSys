@@ -162,6 +162,7 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
+    //Blacklist Word Script
     let blacklisted = ['rape', 'nigga', 'nig', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'tit', 'boob', 'anal', 'cum', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit'];
     let foundInText = false;
       for (var i in blacklisted) {
@@ -172,8 +173,10 @@ client.on("messageDelete", async message =>{
                     message.delete();
                     message.channel.send(`Do not send blacklisted text. ${message.author}`)
                 }
-      
-      
+    //Spike Pears Drink with Vodka Script
+    if (!message.author.id === 137663615657312256)
+        message.react('🤡')
+    
     const prefix = "!";
     if (message.author.bot) return;
     if (!message.guild) return;
