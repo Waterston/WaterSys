@@ -3,6 +3,7 @@ let db = require('quick.db')
 
 module.exports = {
   name: "viewwarns",
+  aliases: ['warns', 'warnlogs', 'warnings'],
   category: "Moderation",
   description: "Lets you view warnings for a user",
   guildOnly: true,
