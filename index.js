@@ -185,8 +185,6 @@ client.on("messageDelete", async message =>{
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     if (command)
       command.run(client, message, args);
-      
-        message.react('🤡')
   });
   
   client.login(process.env.TOKEN);
