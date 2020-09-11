@@ -162,7 +162,7 @@ client.on("messageDelete", async message =>{
   
   
   client.on("message", async message => {
-    let blacklisedwords = ['fuck', 'ass'];
+    let blacklised = ['fuck', 'ass'];
     let foundInText = false;
       for (var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
