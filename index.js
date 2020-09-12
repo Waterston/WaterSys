@@ -75,18 +75,18 @@ const {
     const welcomeembed = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
-    .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+    .setFooter(client.user.username, client.user.displayAvatarURL())
     .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
     .setTitle("Welcome to the State of Waterston")
     .setDescription(`Hi, ${member}. We're happy that you decided to join the State of Waterston Discord Server! While you are here, please review our Server Guidelines and Discord Terms of Service!`)
-    .addField('Roblox Group', `https://www.roblox.com/groups/5231364/State-of-Waterston`)
-    .addField('Punishment Database', '*Coming Soon*')
+    .addField('Roblox Group', `https://www.roblox.com/groups/5231364`)
+    .addField('Punishment Database', 'https://trello.com/b/8W2LM4eD')
 
     const welcomegeneralembed = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
-    .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-    .setTitle("Welcome to the State of Waterston")
+    .setFooter(client.user.username, client.user.displayAvatarURL())
+    .setTitle(`Welcome to the ${message.guild.name}`)
     .setDescription(`${member} has joined the State of Waterston! Make sure to review our Server Guidelines and Discord Terms of Service!`)
 
     channel.send(welcomegeneralembed);
@@ -99,8 +99,8 @@ client.on("messageDelete", async message =>{
      const mDelete = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
-    .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
-    .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+    .setFooter(client.user.username, client.user.displayAvatarURL()) 
+    .setAuthor(client.user.username, client.user.displayAvatarURL())
     .setTitle("Message Deleted")
     .addField("Message Content: ", message.content)
     .addField("Author: ", message.author.tag)
@@ -170,7 +170,7 @@ client.on("messageDelete", async message =>{
       }
                 if (foundInText) {
                     message.delete();
-                    message.channel.send(`${message.author} Do not send blacklisted text.`).then(r => r.delete({timeout: 10000}))
+                    message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
                 }
     
     const prefix = "!";

@@ -12,9 +12,8 @@ module.exports = {
         if (!message.member.roles.cache.get('659591143050444830')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 	    
 	 let ure1 = new Discord.MessageEmbed()
-        .setColor("#0084ff")
-	.setAuthor(message.author.tag, message.author.displayAvatarURL())
-        .setImage(`https://media.discordapp.net/attachments/746430272224100522/754133120189464616/image0.png?width=1362&height=504`)
+    .setColor("#0084ff")
+    setImage(`https://media.discordapp.net/attachments/746430272224100522/754133120189464616/image0.png?width=1362&height=504`)
 	.setDescription(`**Welcome to the official Baylor County, Waterston Discord Server!**\n\n**The State of Waterston was founded and created by Bandelqs and Pearism on Roblox.**\n\n\n***The rules are subject to change at any time. By using the server you acknowledge and agree to following all rules listed below.***`)
 	 
 
@@ -22,7 +21,7 @@ module.exports = {
 	let ure2 = new Discord.MessageEmbed()
 	.setTitle(`Section 1, General Server Guidelines`)
 	.setDescription(``)
-        .setColor("#0084ff")
+    .setColor("#0084ff")
         .addFields(
 		{ name: '1.1: Discord Nicknames', value: `Please set your Discord nickname as your Roblox username at all times. If you're in a department, you must include your callsign as well. It must be clearly visible for everyone to see. You should not have your nickname set to something you're not apart of or for example "Cabinet" of a department, use your department issued callsign. Do not include non-affilated State of Waterston entities as well.`, inline: false },
 		{ name: '1.2: Respecting Members', value: `Treat everyone with respect here. Do not treat someone differently based on race, sex, sexual orientation, disability, or religion. Targeting someone in order to provoke them is forbidden.`, inline: false },
@@ -38,7 +37,7 @@ module.exports = {
 	let ure3 = new Discord.MessageEmbed()
 	.setTitle(`Section 2, Voice Channel Guidelines`)
 	.setDescription(``)
-        .setColor("#0084ff")
+    .setColor("#0084ff")
         .addFields(
 		{ name: '2.1: Background Noise', value: `Try to refrain from having as much as possible background noises. Either enable Push-to-Talk, mute yourself, or stop the noise yourself.`, inline: false },
 		{ name: '2.2: Voice Changers', value: `Using a Voice Changer to modify your voice or annoy other members is prohibited.`, inline: false },
@@ -49,7 +48,7 @@ module.exports = {
 	let ure4 = new Discord.MessageEmbed()
 	.setTitle(`Section 3, Extra Information`)
 	.setDescription(``)
-        .setColor("#0084ff")
+    .setColor("#0084ff")
         .addFields(
 		{ name: '3.1: Discord Moderator', value: `Discord Moderators are allowed to deem what your punishment is per breaking a rule. Don't argue with your punishment or you will be muted.`, inline: false },
 		{ name: '3.2: Warnings/Kicks Limit', value: `When you recieve 3 warnings, you will be kicked from State of Waterston. If you receive another 3 warnings when you return, you will be banned. Appealed warnings/kicked will be removed and not counted towards your next moderation action.`, inline: false },
