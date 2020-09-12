@@ -60,6 +60,7 @@ module.exports = {
 		
 	 )
 	
+	 client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
          client.channels.resolve('709052688368664688').send(ure1)
 	 client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
 	 client.channels.resolve('709052688368664688').send(ure2)
