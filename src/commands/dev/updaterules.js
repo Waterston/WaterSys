@@ -53,7 +53,9 @@ module.exports = {
 		{ name: '3.1: Discord Moderator', value: `Discord Moderators are allowed to deem what your punishment is per breaking a rule. Don't argue with your punishment or you will be muted.`, inline: false },
 		{ name: '3.2: Warnings/Kicks Limit', value: `When you recieve 3 warnings, you will be kicked from the State of Waterston. If you receive another 3 warnings when you return, you will be banned. Appealed warnings/kicked will be removed and not counted towards you're next moderation action.`, inline: false },
 		{ name: '3.3: Automactic Ban', value: `Raiding, racial profanity, mass-tagging, posting NFSW (pornography/gore), and mass spamming will result in an automactic ban.`, inline: false },
-		{ name: '3.4: Zero Tolerance', value: `Waterston uses a Zero Tolerance policy set in place for the entire server from being toxic. Depending on the serverity, you will be automactically muted, warned, or kicked from the server.`, inline: false }
+		{ name: '3.4: Zero Tolerance', value: `Waterston uses a Zero Tolerance policy set in place for the entire server from being toxic. Depending on the serverity, you will be automactically muted, warned, or kicked from the server.`, inline: false },
+		{ name: '3.5: Waterston Founders', value: `Waterston Founders shall be known as Bandelqs & Pearism. They are above all rules listed above. **Please refrain from tagging them randomly** and use the chain of command module.`, inline: false }
+		
 	 )
 	
          client.channels.resolve('709052688368664688').send(ure1)
