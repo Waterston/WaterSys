@@ -11,7 +11,7 @@ module.exports = {
 	    
 	 let usb1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
-    .setImage('.../assets/png/baylorcounty.png')
+    .setImage(`https://i.imgur.com/cwVphYV.png`)
 	 
 	let usb2 = new Discord.MessageEmbed()
 	.setTitle(`Official Waterston Links`)
@@ -24,9 +24,9 @@ module.exports = {
 	 )
 	
 	 client.channels.resolve('754166898366611528').send(usb1)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('754166898366611528').send(`https://i.imgur.com/t3g96kU.gif`)
 	 client.channels.resolve('754166898366611528').send(usb2)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('754166898366611528').send(`https://i.imgur.com/t3g96kU.gif`)
 
 	   
   }

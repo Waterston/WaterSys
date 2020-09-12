@@ -12,7 +12,7 @@ module.exports = {
 	    
 	 let ure1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
-    .setImage('.../assets/png/baylorcounty.png')
+    .setImage(`https://i.imgur.com/cwVphYV.png`)
 	.setDescription(`**Welcome to the official Baylor County, Waterston Discord Server!**\n\nThe State of Waterston was founded and created by Bandelqs and Pearism on Roblox.\n\n\n**The rules are __subject to change at any time__. By using the server you acknowledge and agree to following all rules listed below.**`)
 	 
 	let ure2 = new Discord.MessageEmbed()
@@ -52,13 +52,13 @@ module.exports = {
 	 )
 	
      client.channels.resolve('709052688368664688').send(ure1)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
 	 client.channels.resolve('709052688368664688').send(ure2)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
 	 client.channels.resolve('709052688368664688').send(ure3)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
 	 client.channels.resolve('709052688368664688').send(ure4)
-	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
+	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
 	   
   }
 }; 
