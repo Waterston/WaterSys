@@ -11,12 +11,12 @@ module.exports = {
 	    
 	 let usb1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
-    .setImage(`https://media.discordapp.net/attachments/746430272224100522/754133120189464616/image0.png?width=1362&height=504`)
+    .setImage('.../assets/png/baylorcounty.png')
 	 
 	let usb2 = new Discord.MessageEmbed()
 	.setTitle(`Official Waterston Links`)
 	.setDescription(`Welcome to Waterston, pronounced "water-stone." We offer a variety of monuments and attractions on the coastline of Baylor County and more! Join our state to be involved in departments ranging from law enforcement agencies to our fire department or transportation!\n\n**For more updated and live statistics on the server or more information, run !links or !serverinfo in #bot-commands!**`)
-  	.setColor("#0084ff")
+	.setColor("#00a2cb")
   	.addFields(
 		{ name: 'Discord Server Invite', value: `https://discord.io/waterston`, inline: false },
 		{ name: 'Roblox Group', value: `https://www.roblox.com/groups/5231364`, inline: false },
@@ -24,9 +24,9 @@ module.exports = {
 	 )
 	
 	 client.channels.resolve('754166898366611528').send(usb1)
-	 client.channels.resolve('754166898366611528').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
+	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
 	 client.channels.resolve('754166898366611528').send(usb2)
-  	 client.channels.resolve('754166898366611528').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
+	 client.channels.resolve('709052688368664688').send('.../assets/gif/rainbowline.gif')
 
 	   
   }
