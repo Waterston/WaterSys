@@ -2,7 +2,6 @@
 
 const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
-let ms = require('ms')
 
 module.exports = {
     name: "updaterules",
@@ -13,31 +12,16 @@ module.exports = {
     run: async (client, message, args) => {
         if (!message.member.roles.cache.get('659591143050444830')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 	    
-	 let mutedembed = new Discord.MessageEmbed()
+	 let ure1 = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({
           dynamic: true
         }))
-        .setTitle(`Mute Issued`)
-        .setDescription(`**User Muted:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Time:** ${ms(ms(time))}\n**Reason:** ${reason}`)
+        .setImage(`https://media.discordapp.net/attachments/746430272224100522/754133120189464616/image0.png?width=1362&height=504`)
+        .setDescription(`**Welcome to the official Baylor County, Waterston!\n\nThe State of Waterston was founded and created by Bandelqs and Pearism on Roblox.\n\n\nThe rules are subject to change at any time. By using the server you acknowledge and agree to following all rules listed below.`)
         .setTimestamp()
-        .setFooter(client.user.username, client.user.displayAvatarURL()) 
-        let mutedlogembed = new Discord.MessageEmbed()
-        .setColor("#0084ff")
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({
-          dynamic: true
-        }))
-        .setTitle(`Mute Issued`)
-        .setDescription(`Sucessfully issued a mute to <@${member.user.id}>.`)
-       
-	 message.channel.send(mutedlogembed)
-         client.channels.resolve('709074878912790529').send(mutedembed)
-	    
-	message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`);
-	    
-	 setTimeout(function(){
-		member.roles.remove(muterole.id, reason);
-	  }, ms(time));
-   
+     
+         client.channels.resolve('709052688368664688').send(ure1)
+	   
   }
 }; 
