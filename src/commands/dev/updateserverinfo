@@ -10,7 +10,7 @@ module.exports = {
 	guildOnly: true,
 	usage: "<mention, id>",
     run: async (client, message, args) => {
-        if (!message.member.roles.cache.get('659591143050444830')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+        if (!message.member.roles.cache.get('754166898366611528')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 	    
 	 let ure1 = new Discord.MessageEmbed()
         .setColor("#0084ff")
