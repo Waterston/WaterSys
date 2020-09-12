@@ -18,8 +18,7 @@ module.exports = {
         .setImage(`https://media.discordapp.net/attachments/746430272224100522/754133120189464616/image0.png?width=1362&height=504`)
 	.setDescription(`**Welcome to the OFFICIAL Baylor County, Waterston Discord Server!**\n\n**The State of Waterston was founded and created by Bandelqs and Pearism on Roblox.**\n\n\n***The rules are subject to change at any time. By using the server you acknowledge and agree to following all rules listed below.***`)
 	 
-	 let rainbowline = new Discord.MessageEmbed()
-	 .setImage(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
+
 	 
 	let ure2 = new Discord.MessageEmbed()
 	.setTitle(`Section 1, General Server Guidelines`)
@@ -62,13 +61,13 @@ module.exports = {
 	 )
 	
          client.channels.resolve('709052688368664688').send(ure1)
-	 client.channels.resolve('709052688368664688').send(rainbowline)
+	 client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
 	 client.channels.resolve('709052688368664688').send(ure2)
-	     client.channels.resolve('709052688368664688').send(rainbowline)
+	     client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
 	 client.channels.resolve('709052688368664688').send(ure3)
-	     client.channels.resolve('709052688368664688').send(rainbowline)
+	     client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
 	 client.channels.resolve('709052688368664688').send(ure4)
-	     client.channels.resolve('709052688368664688').send(rainbowline)
+	     client.channels.resolve('709052688368664688').send(`https://tenor.com/view/rainbow-line-left-at-right-gif-18243265`)
 	   
   }
 }; 
