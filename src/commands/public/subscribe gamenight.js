@@ -23,7 +23,7 @@ module.exports = {
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
 
 	    
-	 member.roles.add(muterole.id, reason)
+	 message.author.roles.add(muterole.id)
 	 message.channel.send(gnsubembed)
   }
 }; 
