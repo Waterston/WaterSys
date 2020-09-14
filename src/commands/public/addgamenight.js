@@ -2,7 +2,7 @@ const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
 
 module.exports = {
-    name: "subscribe gamenight",
+    name: "addgamenight",
     category: "moderation",
 	description: "Mutes a user",
 	guildOnly: true,
