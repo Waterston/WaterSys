@@ -10,6 +10,7 @@ module.exports = {
     ownerOnly: true,
     usage: "<id>",
     run: async (client, message, args) => {
+        let g = args[0]
         if (args.length  < 1) return message.reply("⚠️ No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
         if (message.author.id !== '137663615657312256') return message.reply("⛔ Insufficient permissions.").then(r => r.delete({timeout: 10000}))
 
@@ -44,7 +45,7 @@ module.exports = {
         } else
         if (emoji === '✅') {
           await msg.delete()
-          client.guilds.get(args.join(" ")).leave()
+          client.guilds.cache.get(args[0]).leave()
           .then(g => console.log(`Successfully force-left the guild: ${g}, issued by ${message.author.tag}.`)) .catch(console.error);
           return message.channel.send(`Successfully force-left the guild: ${g}`)
     }
