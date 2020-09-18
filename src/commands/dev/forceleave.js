@@ -16,10 +16,8 @@ module.exports = {
 
         let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#be1931")
-        .setTitle(`Force Leave`)
-        .setAuthor(message.author.tag, message.author.displayAvatarURL({
-          timeout: 10000
-        }))
+        .setTitle("Force Leave")
+        .setAuthor(message.author.tag, message.author.displayAvatarURL({timeout: 10000}))
         .setDescription(`Are you sure you want to force leave guild ${g}? This will remove the bot from the specified guild.`)
         .setTimestamp()
         let msg = await message.channel.send(confirmationEmbed)
@@ -32,16 +30,12 @@ module.exports = {
         })
         if (!reaction) {
           await msg.delete()
-          return message.channel.send(`Command timed out.`).then(r => r.delete({
-            timeout: 10000
-          }))
+          return message.channel.send(`Command timed out.`).then(r => r.delete({timeout: 10000}))
         }
         let emoji = reaction.first().emoji.name
         if (emoji === '❌') {
           await msg.delete()
-          return message.channel.send(`Force-leave canceled. Execute the correct guild ID with the command again.`).then(r => r.delete({
-            timeout: 10000
-          }))
+          return message.channel.send(`Force-leave canceled. Execute the correct guild ID with the command again.`).then(r => r.delete({timeout: 10000}))
         } else
         if (emoji === '✅') {
           await msg.delete()
