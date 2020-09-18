@@ -4,7 +4,8 @@ let Discord = require('discord.js')
 
 module.exports = {
     name: "updaterules",
-    category: "dev",
+	category: "dev",
+	hidden: true,
 	description: "Post the currently defined server rules",
 	guildOnly: true,
     run: async (client, message, args) => {

@@ -3,7 +3,8 @@ let Discord = require('discord.js')
 
 module.exports = {
     name: "updateserverinfo",
-    category: "dev",
+	category: "dev",
+	hidden: true,
 	description: "Updates server info",
 	guildOnly: true,
     run: async (client, message, args) => {

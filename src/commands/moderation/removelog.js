@@ -7,6 +7,8 @@ module.exports = {
   aliases: ['revokelog', 'remlog', 'rlog'],
   category: "Moderation",
   description: "Removes a moderation log from a user",
+  guildOnly: true,
+  usage: "<id>",
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (!args[0]) return message.channel.send(`⚠️ Please mention an ID`).then(r => r.delete({
