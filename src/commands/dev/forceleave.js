@@ -11,7 +11,7 @@ module.exports = {
     usage: "<id>",
     run: async (client, message, args) => {
         if (args.length  < 1) return message.reply("⚠️ No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
-        if (message.author.id != 137663615657312256 || 566044959090802690) return message.reply("⛔ Insufficient permissions.").then(r => r.delete({timeout: 10000}))
+        if (message.author.id !== 137663615657312256) return message.reply("⛔ Insufficient permissions.").then(r => r.delete({timeout: 10000}))
 
         let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#be1931")
