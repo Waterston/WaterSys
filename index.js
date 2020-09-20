@@ -6,6 +6,14 @@ const {
   const db = require('quick.db')
   const fetch = require('node-superfetch')
   require('dotenv').config()
+  const mongoose = require('mongoose');
+  mongoose.connect('mongodb+srv://admin:WaterstonPear101@cluster0.hmi7z.mongodb.net/WatersonBotv2', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,}, (err) => {
+        if (err) return console.error(err);
+        console.log('Connected to MongoDB!');
+});
   
   const client = new Client({
     disableEveryone: true
@@ -96,6 +104,8 @@ const {
 })
 
 client.on("messageDelete", async message =>{
+    
+    if (!message.content) return;
      const mDelete = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()
