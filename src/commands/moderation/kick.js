@@ -1,5 +1,6 @@
 let Discord = require('discord.js')
 let db = require('quick.db')
+const kicks = require('../.././models/kicks.js')
 
 
 module.exports = {
@@ -9,45 +10,90 @@ module.exports = {
   guildOnly: true,
   usage: "<mention, id>",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
+   if (!message.member.roles.cache.get('756741750168748153')) return message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
+   if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     }))
-    let member = message.mentions.members.first()
-    let reason = args.slice(1).join(' ')
-    if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
-    if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
-    let kickObj = {
-      kicked: member.user.id,
-      kicker: message.author.id,
-      reason: reason,
-      id: `k${Math.random().toString(36).substr(2, 9)}`
-    }
-    await member.kick(reason)
-    db.push(`logs.${message.guild.id}`, kickObj)
-    let logEmbed = new Discord.MessageEmbed()
-      .setColor("#0084ff")
-      .setAuthor(message.author.tag, message.author.displayAvatarURL({
-        dynamic: true
-      }))
-      .setTitle("Kick Log Issued")
-      .setDescription(`**User Kicked:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}\n**Case ID:** ${kickObj.id}`)
-      .setTimestamp()
-      .setFooter(client.user.username, client.user.displayAvatarURL()) 
-    let kickedEmbed = new Discord.MessageEmbed()
-      .setColor("#0084ff")
-      .setAuthor(message.author.tag, message.author.displayAvatarURL({
-        dynamic: true
-      }))
-      .setTitle("Kick Log Issued")
-      .setDescription(`Sucessfully kicked <@${member.user.id}>.`)
-      .addFields(
-		  { name: 'Reason', value: `${reason}`, inline: true },
-		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
-	    )
-      .setTimestamp()
-      .setFooter(client.user.username, client.user.displayAvatarURL()) 
-    client.channels.resolve('709074878912790529').send(logEmbed)
-    return message.channel.send(kickedEmbed)
-  }
-}
+	const member = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+
+	  
+	let reason = args.slice(1).join(' ')
+	if (reason.replace(/ /g, '').trim() === '') reason = `Invalid Reason`
+	
+      kicks.findOne(
+      { guildID: message.guild.id, userID: member.id },
+      async (err, data) => {
+        if(err) console.log(err);
+        if(!data) {
+          let newLogs = new kicks({
+          guildID: message.guild.id,
+          userID: member.id,
+          Kicks: [
+            {
+              modID: message.author.id,
+              reason: reason,
+              time: message.createdAt
+            },
+          ],
+        })
+        newLogs.save()
+      } else {
+        data.Kicks.push({
+              modID: message.author.id,
+              reason: reason,
+              time: message.createdAt
+         })
+        data.save();
+
+
+        }
+
+})
+    
+    
+	const logEmbed = new Discord.MessageEmbed()
+	      .setColor("#0084ff")
+	      .setAuthor(message.author.tag, message.author.displayAvatarURL({
+		dynamic: true
+	      }))
+	      .setTitle(`Kick Log Issued`)
+	      .setDescription(`**User Kicked:** <@${member.user.id}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
+	      .setTimestamp()
+	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
+	
+	const warnedEmbed = new Discord.MessageEmbed()
+	      .setColor("#0084ff")
+	      .setAuthor(message.author.tag, message.author.displayAvatarURL({
+		dynamic: true
+	      }))
+	      .setTitle(`Kick Log Issued`)
+	      .setDescription(`Sucessfully issued a kick to <@${member.user.id}>.`)
+	      .addFields(
+			  { name: 'Reason', value: `${reason}`, inline: true },
+			  { name: 'Content Moderator', value: `<@${message.author.id}>`, inline: true },
+		    )
+	      .setTimestamp()
+	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
+	
+	const usermessageEmbed = new Discord.MessageEmbed()
+	      .setColor("#0084ff")
+	      .setAuthor(message.author.tag, message.author.displayAvatarURL({
+		dynamic: true
+	      }))
+	      .setTitle(`Kick Received`)
+	      .setDescription('This is a notification that you have been kicked in **State of Waterston**. \n\n`To appeal this, please utilize the appeal command by running !appeal (warning/kick) (reason).`')
+	      .addFields(
+			  { name: 'Reason', value: `${reason}`, inline: true },
+			  { name: 'Content Moderator', value: `<@${message.author.id}>`, inline: true },
+		    )
+	      .setTimestamp()
+	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
+	const channel = client.channels.cache.find(channel => channel.name === "incident-logs")
+	message.channel.send(warnedEmbed)
+	    channel.send(logEmbed);
+    		member.send(usermessageEmbed).catch((error) => {
+     		 return
+   	 });
+
+	}
+	  }	

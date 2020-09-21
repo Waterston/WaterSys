@@ -5,6 +5,7 @@ module.exports = {
     name: "suggest",
     category: "public",
     description: "Suggest a V1 command",
+    guildOnly: true,
     usage: "<mention, id>",
     run: async (client, message, args) => {
         let rMember = args[0]       

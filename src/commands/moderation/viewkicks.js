@@ -1,5 +1,6 @@
 let Discord = require('discord.js')
 let db = require('quick.db')
+const Kicks = require('../.././models/kicks.js')
 
 module.exports = {
   name: "viewkicks",
@@ -9,25 +10,42 @@ module.exports = {
   guildOnly: true,
 	usage: "<mention, id>",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
-    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
+    if (!message.member.roles.cache.get('756741750168748153')) return message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
+	  if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
-    }))
-    let member = message.mentions.members.first()
-    let kicks = db.fetch(`logs.${message.guild.id}`).filter(r => r.kicked === member.user.id && r.id.startsWith('k'))
-    let desc = `**Kick History** (${member.user.id})\n`
-    for (let kick of kicks) {
-      desc += `\n**Content Moderator:** <@${kick.kicker}> (${kick.kicker.id})\n**Reason:** ${kick.reason}\n**Case ID:** ${kick.id}\n`
-    }
-    let embed = new Discord.MessageEmbed()
-    .setColor("#0084ff")
-    .setAuthor(member.user.tag, member.user.displayAvatarURL({
-      dynamic: true
-    }))
-    .setTitle("Kick History")
-    .setDescription(desc)
-    .setFooter(`Kicks for ${member.user.tag}`, client.user.displayAvatarURL()) 
-    .setTimestamp()
-    return message.channel.send(embed)
-  }
-}
+    	}))
+	const user = message.mentions.members.first() || message.guild.members.cache.get(args[1]) || message.member
+	
+	const nokicks = new Discord.MessageEmbed()
+	      .setColor("#0084ff")
+	      .setAuthor(message.author.tag, message.author.displayAvatarURL({
+		dynamic: true
+	      }))
+	      .setTitle(`Kick History`)
+	       .setTimestamp()
+	      .setDescription(`<@${user.user.id}> has no previous kick history.`)
+	      .setTimestamp()
+	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
+	
+	Kicks.find(
+	  {guildID: message.guild.id, userID: user.id}, 
+	  async (err, data) => {
+
+	    const gettingwarns = data.map((size) => size.Kicks.length)
+	    if(gettingwarns < 1) return message.channel.send(nokicks)
+
+	    const kicksEmbed = new Discord.MessageEmbed()
+	    .setColor("#0084ff")
+	    .setTitle(`Kick(s) History (${user.id})`)
+	    .setTimestamp()
+	    .setFooter(`Total Kicks: ${gettingwarns}`, client.user.displayAvatarURL()) 
+	    .setDescription(data.map((d) => {
+	      return d.Kicks.map(
+		    (w, i) =>
+			  `\`\`\`Content Moderator: ${message.guild.members.cache.get(w.modID).user.tag}\nReason: ${w.reason}\nLog Number: ${i + 1}\nTimestamp: ${w.time}\`\`\``).join(" ")
+
+	    }))
+	    message.channel.send(kicksEmbed)
+	  })
+	  }
+	}

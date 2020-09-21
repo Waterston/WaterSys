@@ -4,6 +4,7 @@ module.exports = {
     name: "uptime",
     category: "public",
     description: "Shows the bot uptime",
+    cooldown: 5,
     usage: "<mention, id>",
     cooldown: 5,
     run: async (client, message, args) => {

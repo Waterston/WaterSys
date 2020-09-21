@@ -7,7 +7,7 @@ const {
   const fetch = require('node-superfetch')
   require('dotenv').config()
   const mongoose = require('mongoose');
-  mongoose.connect('mongodb+srv://admin:WaterstonPear101@cluster0.hmi7z.mongodb.net/WatersonBotv2', {
+  mongoose.connect(process.env.MONGOOSE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,}, (err) => {
@@ -104,8 +104,6 @@ const {
 })
 
 client.on("messageDelete", async message =>{
-    
-    if (!message.content) return;
      const mDelete = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setTimestamp()

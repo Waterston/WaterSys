@@ -1,4 +1,4 @@
-# WaterstonBotv1
+# WaterstonBotv2
 [![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&style=flat-square&logo=Discord)](https://discord.gg/Bt6cpnc)
 [![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm&style=flat-square)](https://github.com/discordjs)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
