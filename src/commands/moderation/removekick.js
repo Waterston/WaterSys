@@ -16,6 +16,7 @@ module.exports = {
     const user = args[0]
     const id = args[1]
     const reason = args.slice(3).join(' ')
+    if (reason.replace(/ /g, '').trim() === '') reason = `Invalid Reason`
     
     Kicks.findOne(
           {guildID: message.guild.id, userID: user}, 
