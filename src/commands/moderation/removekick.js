@@ -15,8 +15,7 @@ module.exports = {
 	  if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     const user = args[0]
     const id = args[1]
-    const reason = args.slice(3).join(' ')
-    if (reason.replace(/ /g, '').trim() === '') reason = `Invalid Reason`
+
     
     Kicks.findOne(
           {guildID: message.guild.id, userID: user}, 
@@ -42,7 +41,7 @@ module.exports = {
 		dynamic: true
 	      }))
 	      .setTitle(`Kick Log Removed`)
-	      .setDescription(`**User:** <@${user}>\n**Content Moderator:** <@${message.author.id}>\n**Reason:** ${reason}`)
+	      .setDescription(`**User:** <@${user}>\n**Content Moderator:** <@${message.author.id}>\n**Status:** *Removed*`)
 	      .setTimestamp()
 	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
      	
