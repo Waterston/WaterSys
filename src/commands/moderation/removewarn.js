@@ -16,6 +16,16 @@ module.exports = {
     const user = args[0]
     const id = args[1]
     
+    if (!user) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
+      timeout: 10000
+    }))
+	  
+	  if (!id) return message.channel.send(`⚠️ No log id specified.`).then(r => r.delete({
+      timeout: 10000
+    }))
+    
+    
+    
     Warns.findOne(
           {guildID: message.guild.id, userID: user}, 
         async (err, data) => {
