@@ -94,6 +94,8 @@ module.exports = {
     		member.send(usermessageEmbed).catch((error) => {
      		 return
    	 });
+	      await member.kick({ reason: '${reason}' })
+  	  await member.kick(reason)
 
 	}
 	  }	
