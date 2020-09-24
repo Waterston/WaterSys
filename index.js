@@ -171,7 +171,7 @@ client.on("messageDelete", async message =>{
   
   client.on("message", async message => {
     //Blacklist Word Script
-    let blacklisted = ['sped', 'nigga', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'retard', 'boob', 'anal', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit', 'spastic', 'spaz'];
+    let blacklisted = ['sped', 'nigga', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'retard', 'boob', 'anal', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'gga', 'yhole', 'whore', 'slut', 'clit', 'spastic', 'spaz', 'coochie', 'dike'];
     let foundInText = false;
       for (var i in blacklisted) {
         if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
