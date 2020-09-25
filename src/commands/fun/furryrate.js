@@ -7,7 +7,7 @@ module.exports = {
     description: "See what percentage of the specified user is a furry",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-        let member = msssage.mentions.members.first() || message.guild.members.get(args[0]); || message.member
+        let member = /*msssage.mentions.members.first() ||*/ message.guild.members.get(args[0]); || message.member
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
