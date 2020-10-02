@@ -57,7 +57,7 @@ module.exports = {
 	 message.channel.send(mutedlogembed)
          client.channels.resolve('709074878912790529').send(mutedembed)
 	    
-	message.channel.send(`@${member.user.tag} has now been muted for ${ms(ms(time))}`);
+	message.channel.send(`${member.user.tag} has now been muted for ${ms(ms(time))}`);
 	    
 	 setTimeout(function(){
 		member.roles.remove(muterole.id, reason);
