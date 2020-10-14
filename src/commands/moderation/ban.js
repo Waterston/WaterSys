@@ -17,6 +17,7 @@ module.exports = {
     let reason = args.slice(1).join(' ')
     if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
+    if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
     await member.ban()
     let blogEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
@@ -30,7 +31,7 @@ module.exports = {
 		  { name: 'Moderator', value: `<@${message.author.id}>`, inline: true },
 	    )
       .setTimestamp()
-      .setFooter("WaterstonSystems", client.user.displayAvatarURL()) 
+      .setFooter(client.user.username, client.user.displayAvatarURL()) 
     let banembed = new Discord.MessageEmbed()
       .setColor("#0084ff")
       .setAuthor(message.author.tag, message.author.displayAvatarURL({
