@@ -14,9 +14,10 @@ module.exports = {
         if(!mutee) return message.channel.send(`⚠️ No user specified, please mention the user.`)
         
         let reason = args.slice(1).join(" ");
-        if(!reason) reason = "No reason given"
+        if(!reason) reason = "No reason specified"
 
         let muterole = message.guild.roles.cache.find(r => r.name === "Muted");
+        if (!muterole) return message.reply(":warning: An error occurred in finding `Muted` role. Please contact a server administrator.")
 
         let unmutedembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
