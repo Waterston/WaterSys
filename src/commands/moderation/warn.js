@@ -80,7 +80,7 @@ module.exports = {
 		dynamic: true
 	      }))
 	      .setTitle(`Warning Received`)
-	      .setDescription('This is a notification that you have been warned in' + `${message.guild.name}.` + '\n\nTo appeal this, please utilize the appeal command by running `!appeal (warning/kick) (reason)`.')
+	      .setDescription('This is a notification that you have been warned in ' + `**${message.guild.name}**.` + '\n\nTo appeal this, please utilize the appeal command by running `!appeal (warning/kick) (reason)`.')
 	      .addFields(
 			  { name: 'Reason', value: `${reason}`, inline: true },
 			  { name: 'Content Moderator', value: `<@${message.author.id}>`, inline: true },
