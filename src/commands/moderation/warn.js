@@ -13,10 +13,11 @@ module.exports = {
       timeout: 10000
     }))
 	const user = message.mentions.members.first() || message.guild.members.cache.get(args[1])
-	if (message.author.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
+	//if (message.author.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
+	if (client.user.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	  
 	let reason = args.slice(1).join(' ')
-	if (reason.replace(/ /g, '').trim() === '') reason = `Invalid Reason`
+	if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
 	
 	  warn.findOne(
 	      { guildID: message.guild.id, userID: user.id },
@@ -79,7 +80,7 @@ module.exports = {
 		dynamic: true
 	      }))
 	      .setTitle(`Warning Received`)
-	      .setDescription('This is a notification that you have been warned in ${message.guild.name}. \n\n`To appeal this, please utilize the appeal command by running !appeal (warning/kick) (reason).`')
+	      .setDescription('This is a notification that you have been warned in' + `${message.guild.name}` + '.' '\n\nTo appeal this, please utilize the appeal command by running `!appeal (warning/kick) (reason)`.')
 	      .addFields(
 			  { name: 'Reason', value: `${reason}`, inline: true },
 			  { name: 'Content Moderator', value: `<@${message.author.id}>`, inline: true },
