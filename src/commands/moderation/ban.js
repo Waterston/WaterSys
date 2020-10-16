@@ -11,7 +11,7 @@ module.exports = {
   run: async (client, message, args) => {
     if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`:no_entry: Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`:warning: No user specified, please mention the user.`).then(r => r.delete({timeout: 10000}))
-    let member = message.guild.members.first() || message.guild.members.get(args[0]);
+    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     let reason = args.slice(1).join(' ')
     if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`:no_entry: You cannot run this command on yourself.`)
