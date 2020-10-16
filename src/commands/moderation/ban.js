@@ -16,7 +16,7 @@ module.exports = {
     if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
     if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
-    .catch(err => { return message.channel.send(`⛔ An error occurred in banning the user. No action was taken.`)});
+    if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(`⛔ An error occurred while banning. No action was taken.`)
     await member.ban()
 
     let blogEmbed = new Discord.MessageEmbed()
