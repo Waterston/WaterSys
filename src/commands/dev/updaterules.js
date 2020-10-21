@@ -9,7 +9,7 @@ module.exports = {
 	description: "Post the currently defined server rules",
 	guildOnly: true,
     run: async (client, message, args) => {
-        if (!message.member.roles.cache.get('659591143050444830')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+        if (message.author.id !== '137663615657312256' || '566044959090802690') return message.reply(":no_entry: Insufficient permissions.")
 	    
 	 let ure1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
