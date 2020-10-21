@@ -8,7 +8,7 @@ module.exports = {
 	description: "Updates server info",
 	guildOnly: true,
     run: async (client, message, args) => {
-        if (!message.member.roles.cache.get('659591143050444830')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+        if (!message.member.roles.cache.get('709047380309311568')) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
 	    
 	 let usb1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
