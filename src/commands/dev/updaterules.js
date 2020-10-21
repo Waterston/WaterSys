@@ -24,11 +24,11 @@ module.exports = {
 		{ name: '1.2: Respecting Members', value: `Treat everyone with respect here. Do not treat someone differently based on race, sex, sexual orientation, disability, or religious belief. Targeting someone in order to provoke them is forbidden.`, inline: false },
 		{ name: '1.3: Language Speaking', value: `This is an English speaking Discord sever. Please keep all conversations in English or minimal foreign languages. Common phrases between both languages such as Hola, Bonjour, or Uno are allowed.`, inline: false },
 		{ name: '1.4: Server Misuse', value: `Do not misuse or abuse anything apart of the server including but not limited to: commands, channels, etc. Keep it relevant to the channel topic in the correct text channels.`, inline: false },
-		{ name: '1.5: Profanity', value: `Cursing is allowed but limited to low use. Any use of racist, sexist, or other insulting curse words/slurs is not allowed and can result in an immediate ban.`, inline: false },
-		{ name: '1.6: Not Safe for Work', value: `NSFW (Not Safe for Work) is strictly forbidden. Make sure your profile pictures and photos are not consisting of pornography, gore, and not have relationship to terrorist organizations. References to NSFW will result in an moderation action and are still not allowed.`, inline: false },
+		{ name: '1.5: Profanity', value: `Cursing is allowed but limited to low use. Any use of racist, sexist, ableist, or other insulting curse words/slurs is not allowed and can result in an immediate ban.`, inline: false },
+		{ name: '1.6: Not Safe for Work', value: `NSFW (Not Safe for Work) is strictly forbidden. Make sure your profile picture and photos are not consisting of pornography, gore, etc, and not have relationship to terrorist organizations. References to NSFW will result in an moderation action and are still not allowed.`, inline: false },
 		{ name: '1.7: Message Spam', value: `Do not start spamming (sending the same message indiscriminately to large numbers of recipients) members continuously in any channel on this server. This also includes bulk messages also referred to copy-pasta, taking up a lot of space.`, inline: false },
 		{ name: '1.8: Member Privacy', value: `Do not expose any personal photos, names, etc. without the person's permission. Please respect each members' privacy balance from in real life and Roblox/Discord. This also includes posting unfamiliar links/location (IP) grabbers.`, inline: false },
-		{ name: '1.9: Advertising', value: `Advertising is strictly forbidden. This includes Roblox groups, discord servers, etc. Commerce-approved businesses are exempt from this rule for promoting their own business in Waterston in specified channels. Do not DM people your Discord Servers as well, that will result in an immediate ban.`, inline: false }	
+		{ name: '1.9: Advertising', value: `Advertising is strictly forbidden. This includes Roblox groups, Discord servers, etc. Commerce-approved businesses are exempt from this rule for promoting their own business in Waterston in specified channels. Do not DM people your Discord Servers as well, that will result in an immediate ban.`, inline: false }	
 	 )
 	
 	let ure3 = new Discord.MessageEmbed()
@@ -37,8 +37,8 @@ module.exports = {
         .addFields(
 		{ name: '2.1: Background Noise', value: `Try to refrain from having as much as possible background noises. Either enable Push-to-Talk, mute yourself, or stop the noise yourself.`, inline: false },
 		{ name: '2.2: Voice Changers', value: `Using a Voice Changer to modify your voice or annoy other members is prohibited.`, inline: false },
-		{ name: '2.3: Language Speaking', value: `Explicit language relating to Rule 1.5 is prohibited in voice channels. Please also use English at all times while in voice channels. `, inline: false },
-		{ name: '2.4: Live Streams', value: `Make sure what you're doing on your Live/Video Stream is appropriate and follows all general rules.`, inline: false }
+		{ name: '2.3: Language Speaking', value: `Explicit language relating to Rule 1.5 is prohibited in voice channels. Please also use English at all times while in voice channels.`, inline: false },
+		{ name: '2.4: Live Streams', value: `Make sure what you're doing on your live/video Stream is appropriate and follows all general rules.`, inline: false }
 	 )
 	
 	let ure4 = new Discord.MessageEmbed()
@@ -47,8 +47,10 @@ module.exports = {
         .addFields(
 		{ name: '3.1: Discord Moderator', value: `Discord Moderators are allowed to deem what your punishment is per breaking a rule. Don't argue with your punishment or you will be muted.`, inline: false },
 		{ name: '3.2: Warnings/Kicks Limit', value: `When you recieve 3 warnings, you will be kicked from State of Waterston. If you receive another 3 warnings when you return, you will be banned. Appealed warnings/kicked will be removed and not counted towards your next moderation action.`, inline: false },
-		{ name: '3.4: Zero Tolerance', value: `Waterston uses a Zero Tolerance policy set in place for to prevent the entire server from being toxic. Raiding, racial profanity, mass-tagging, posting NSFW (pornography/gore), and mass spamming will result in an automactic ban. Depending on the serverity of the rule broken, you will be automactically muted, warned, or kicked from the server.`, inline: false },
-		{ name: '3.5: Waterston Founders', value: `Waterston Founders shall be known as Bandelqs & Pearism. They are above all rules listed above. **Please refrain from tagging without a plausible reason** and use the chain of command system.`, inline: false }
+		{ name: '3.4: Zero Tolerance', value: `Waterston uses a Zero Tolerance policy set in place for to prevent toxicity among server members. Raiding, racial profanity, mass-tagging, posting NSFW (pornography/gore), and mass spamming will result in an automactic ban. Depending on the serverity of the rule broken, you will be automactically muted, warned, or kicked from the server.`, inline: false },
+		{ name: '3.5: Impersonation', value: `Any form of impersonation (by username, profile picture, similar Roblox username, etc) of another user is prohibited and will result in a permanent ban.`, inline: false },
+		{ name: '3.6: Waterston Founders', value: `Waterston Founders shall be known as Bandelqs & Pearism. They are above all rules listed above. **Please refrain from tagging without a plausible reason** and use the chain of command system.`, inline: false },
+		{ name: '3.7: Discord Term of Services & Community Guidelines', value: `We are required to ensure that this server follows the Terms of Service and Community Guidelines set by Discord. We are also legally required to remove any user that is under the age of thirteen years old. We recommend not discussing or joking about your age on here as it can get you banned.`, inline: false }
 		
 	 )
 	
