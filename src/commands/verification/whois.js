@@ -19,8 +19,8 @@ module.exports = {
         let whoembed = new Discord.MessageEmbed()
         .setTitle(`${body.robloxUsername}`)
         .addField(
-            { name: 'Status', value: `${StatusBio.status}`, inline: false },
-            { name: 'Creation Date', value: `${JoinDate.created}`, inline: false },
+            { name: 'Status', value: StatusBio.status, inline: false },
+            { name: 'Creation Date', value: JoinDate.created, inline: false },
         )
         //.setDescription(`**Status:**\n${StatusBio.status}\n\n**Creation Date:**\n${JoinDate.created}`)
         .setColor("#0084ff")
