@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const fetch = require('node-superfetch')
+const fetch = require('node-fetch')
 
 module.exports = {
     name: "whois",
@@ -36,6 +36,6 @@ module.exports = {
 async function getAccountThumbnail(id) {
     let {
       body
-    } = await fetch.get(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${id}&size=352x352&format=Png&isCircular=false`)
+    } = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${id}&size=352x352&format=Png&isCircular=false`)
     return body.data[0].imageUrl
   }
