@@ -18,16 +18,14 @@ module.exports = {
         // Define the first embed, which will contain Roblox info.
         let whoembed = new Discord.MessageEmbed()
         .setTitle(`${body.robloxUsername}`)
-        .addField(
-            { name: 'Status', value: StatusBio.status, inline: false },
-            { name: 'Creation Date', value: JoinDate.created, inline: false },
-        )
+        .addField("Status", `${StatusBio.status}`, false)
+        .addField("Join Date", `${JoinDate.created}`, true)
         //.setDescription(`**Status:**\n${StatusBio.status}\n\n**Creation Date:**\n${JoinDate.created}`)
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
-
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
+        
         message.channel.send(whoembed)
     }
 }

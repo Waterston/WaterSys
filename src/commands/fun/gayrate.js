@@ -13,7 +13,7 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setTitle(`Gay Rate`)
         .setDescription(`<@${member.user.id}> is ${Math.floor(Math.random() * 101)}% gay. :rainbow_flag:`)
-        .addField("Disclaimer", "We do not support harassment based on someone's sexual orentation. If someone is harassing youor someone else, let a moderator know.", false)
+        .addField("Disclaimer", "We do not allow harassment based on someone's sexual orentation. If someone is harassing you or someone else, let a moderator know.", false)
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
