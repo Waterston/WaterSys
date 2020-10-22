@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-const fetch = require('node-fetch')
+const fetch = require('node-superfetch')
 
 module.exports = {
     name: "whois",
