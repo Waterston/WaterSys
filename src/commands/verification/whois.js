@@ -10,12 +10,12 @@ module.exports = {
     guildOnly: true,
     run: async (client, message, args) => {
 
-        //let member = message.mentions.members.first() || message.member
+        let member = message.mentions.members.first() || message.member
         // Sets the variables to the API links.
         let body = await fetch(`https://verify.eryn.io/api/user/${message.member.id}`).then(res => res.json())
         let StatusBio = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
         let JoinDate = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}`).then(res => res.json())
-        let friendsCount = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/friends/count`).then(res => res.json())
+        let friends = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/friends/count`).then(res => res.json())
         //let RobloxAvatar = await getAccountThumbnail(body.robloxId)
 
         // Define the first embed, which will contain Roblox info.
@@ -25,7 +25,7 @@ module.exports = {
         .addField("Status", `${StatusBio.status}`, false)
         .addField("Roblox ID", `${body.robloxId}`, true)
         .addField("Join Date", `${JoinDate.created}`, true)
-        .addField("Friends", `${friendsCount}`, true)
+        .addField("Friends", `${friends.count}`, true)
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
