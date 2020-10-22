@@ -28,7 +28,7 @@ module.exports = {
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
-        .setThumbnail(RobloxAvatar)
+        //.setThumbnail(RobloxAvatar)
         .setTimestamp()
 
         message.channel.send(whoembed)
