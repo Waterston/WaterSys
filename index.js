@@ -21,7 +21,7 @@ const {
   
   client.commands = new Collection();
   client.aliases = new Collection();
-  
+  const config = require("./config.json");
   
   
   ["command"].forEach(handler => {
@@ -181,10 +181,10 @@ client.on("messageDelete", async message =>{
                     message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
                 }
     
-    const prefix = "!";
+    //const prefix = "!";
     if (message.author.bot) return;
     if (!message.guild) return;
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(config.prefix)) return;
     if (!message.member) message.member = await message.guild.fetchMember(message);
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
