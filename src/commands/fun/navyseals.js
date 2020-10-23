@@ -7,7 +7,7 @@ module.exports = {
     description: "Friendly version of Navy SEALs copypasta",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`⛔ You are not cool enough.`).then(r => r.delete({timeout: 10000}))
+    if (!message.member.roles.cache.get('709047575180869663')) return;
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())

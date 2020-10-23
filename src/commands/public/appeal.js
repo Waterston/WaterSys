@@ -11,7 +11,7 @@ module.exports = {
         const channel = message.guild.channels.cache.find(channel => channel.name === "history-appeal-logs")
         
         if (!channel)
-            return channel.send("Channel not found. Please contact a Founder to fix this.");
+            return channel.send("Channel not found. Please contact a server administrator to fix this.");
             const appealchannelembed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()

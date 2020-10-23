@@ -11,7 +11,7 @@ module.exports = {
     usage: "<id>",
     run: async (client, message, args) => {
         let g = args[0]
-	if (message.author.id !== '137663615657312256' || '566044959090802690') return message.reply(":no_entry: Insufficient permissions. This incident will be reported.").then(r => r.delete({timeout: 10000})).then(g => console.log(`${message.author.tag} attempted to issue forceleave unsuccessfully.`)) .catch(console.error);
+      	if (message.author.id !== '137663615657312256' || message.author.id !== '566044959090802690') return message.reply(":no_entry: Insufficient permissions. This incident will be reported.").then(r => r.delete({timeout: 10000})).then(g => console.log(`${message.author.tag} attempted to issue forceleave unsuccessfully.`)) .catch(console.error);
         if (args.length  < 1) return message.reply(":warning: No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
 
         let confirmationEmbed = new Discord.MessageEmbed()
