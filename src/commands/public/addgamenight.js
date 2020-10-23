@@ -29,10 +29,10 @@ module.exports = {
   
   if(message.member.roles.cache.has(gamenightrole)){
     message.channel.send(gnremovedembed)
-    message.member.roles.remove(amenightrole.id).catch(console.error);
+    message.member.roles.remove(gamenightrole.id).catch(console.error);
   } else {
     message.channel.send(gnaddedembed)
-    message.member.roles.add(amenightrole.id).catch(console.error);
+    message.member.roles.add(gamenightrole.id).catch(console.error);
   }
 	    
 	 //message.member.roles.add(gamenightrole.id)
