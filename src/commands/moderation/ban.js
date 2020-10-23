@@ -9,7 +9,7 @@ module.exports = {
   guildOnly: true,
   usage: "<mention, id> <reason>",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return message.channel.send(`:no_entry: Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (!message.member.roles.cache.get('709047575180869663')) return;
     if (message.mentions.members.size === 0) return message.channel.send(`:warning: No user specified, please mention the user.`).then(r => r.delete({timeout: 10000}))
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     let reason = args.slice(1).join(' ')
