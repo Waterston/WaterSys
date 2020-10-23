@@ -186,7 +186,7 @@ client.on("messageDelete", async message =>{
     if (!message.guild) return;
     if (!message.content.startsWith(config.prefix)) return;
     if (!message.member) message.member = await message.guild.fetchMember(message);
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const cmd = args.shift().toLowerCase();
     if (cmd.length === 0) return;
     let command = client.commands.get(cmd);
