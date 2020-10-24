@@ -1,6 +1,6 @@
 const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
-const config = require("../config.json");
+const config = require(".../config.json");
 
 module.exports = {
     name: "forceleave",
