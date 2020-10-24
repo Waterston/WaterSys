@@ -21,7 +21,7 @@ const {
   
   client.commands = new Collection();
   client.aliases = new Collection();
-  const config = require("config.json");
+  const config = require("./config.json");
   
   
   ["command"].forEach(handler => {
