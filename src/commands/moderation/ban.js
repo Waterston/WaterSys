@@ -21,9 +21,7 @@ module.exports = {
     // Builds the embed for mod logs channel	  
     let blogEmbed = new Discord.MessageEmbed()
       .setColor("#0084ff")
-      .setAuthor(message.author.tag, message.author.displayAvatarURL({
-        dynamic: true
-      }))
+      .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
       .setTitle("Ban Issued")
       .setDescription(`**User Banned:** <@${member.user.id}>`)
       .addFields(
@@ -35,9 +33,7 @@ module.exports = {
     // Notifies the moderator that the command was executed
     let banembed = new Discord.MessageEmbed()
       .setColor("#0084ff")
-      .setAuthor(message.author.tag, message.author.displayAvatarURL({
-        dynamic: true
-      }))
+      .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true }))
       .setTitle("Ban Issued")
       .setDescription(`Successfully banned <@${member.user.id}>.`)
       .addFields(

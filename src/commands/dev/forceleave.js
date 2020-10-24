@@ -1,5 +1,6 @@
 const { stripIndents } = require('common-tags');
 let Discord = require('discord.js')
+const config = require("./config.json");
 
 module.exports = {
     name: "forceleave",
@@ -11,7 +12,7 @@ module.exports = {
     usage: "<id>",
     run: async (client, message, args) => {
         let g = args[0]
-      	if (message.author.id !== '137663615657312256' || message.author.id !== '566044959090802690') return message.reply(":no_entry: Insufficient permissions. This incident will be reported.").then(r => r.delete({timeout: 10000})).then(g => console.log(`${message.author.tag} attempted to issue forceleave unsuccessfully.`)) .catch(console.error);
+      	if (message.author.id !== config.ownerID) return console.log(`${message.author.tag} attempted to force-leave unsuccessfully.`).catch(console.error);
         if (args.length  < 1) return message.reply(":warning: No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
 
         let confirmationEmbed = new Discord.MessageEmbed()
@@ -40,7 +41,7 @@ module.exports = {
         if (emoji === '✅') {
           await msg.delete()
           client.guilds.cache.get(args[0]).leave()
-          .then(g => console.log(`Successfully force-left the guild: ${g}, issued by ${message.author.tag}.`)) .catch(console.error);
+          .then(g => console.log(`Successfully force-left the guild: ${g}, issued by ${message.author.tag}.`)).catch(console.error);
           return message.channel.send(`Successfully force-left the guild: ${g}`)
     }
   }
