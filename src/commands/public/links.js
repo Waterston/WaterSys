@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require("../../../config.json");
 
 module.exports = {
     name: "links",
@@ -7,8 +8,7 @@ module.exports = {
     description: "Posts the most updated links for Waterston content",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-       //if ( message.guild.id === '659451316707524618') { // Makes this command only work for the main server
-       if (message.guild.id !== '659451316707524618') return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+       if (message.guild.id !== config.featuredguildID) return;
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setColor("#0084ff")
@@ -20,6 +20,5 @@ module.exports = {
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)
-        //}
     }
 }

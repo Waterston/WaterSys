@@ -8,7 +8,6 @@ module.exports = {
     description: "Returns with the bot's current version number",
     ownerOnly: true,
     run: async (client, message, args) => {
-    //if (!message.guild.members.cache.find(m => m.id === "137663615657312256")) return message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())

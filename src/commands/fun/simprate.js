@@ -6,6 +6,7 @@ module.exports = {
     category: "fun",
     description: "See what percentage of the specified user is a simp",
     usage: "<mention, id>",
+    guildOnly: true,
     run: async (client, message, args) => {
         let member = message.mentions.members.first() || message.member
         const embed = new Discord.MessageEmbed()

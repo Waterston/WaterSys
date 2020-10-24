@@ -7,6 +7,7 @@ module.exports = {
   aliases: ['verify', 'reverify', 'getroles', 'update', 'updateroles'],
   category: "Roblox",
   description: "Registers your Roblox account and links it to your Discord account",
+  guildOnly: true,
   run: async (client, message, args) => {
     try {
       let {
@@ -23,7 +24,7 @@ module.exports = {
       let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setTitle(`Verification`)
-        .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+        .setAuthor(message.author.tag, client.user.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL()) 
         .setThumbnail(thumbnail)
         .setDescription(`Your Roblox username is: **${body.robloxUsername}**. Is this correct?`)
@@ -42,7 +43,7 @@ module.exports = {
       let notverifiedembed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setTitle(`Verification Setup`)
-        .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+        .setAuthor(message.author.tag, client.user.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         .setDescription(`Please verify your Discord account with your correct Roblox account at: https://verify.eryn.io/. After you have verified, re-register again.`)
@@ -70,7 +71,7 @@ module.exports = {
         let completedveri = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setTitle(`Verification Completed`)
-        .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+        .setAuthor(message.author.tag, client.user.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setThumbnail(thumbnail)
         .setTimestamp()

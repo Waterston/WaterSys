@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const { stripIndents } = require("common-tags");
+const config = require("../../../config.json");
 
 module.exports = {
     name: "requestban",
@@ -7,9 +8,10 @@ module.exports = {
     description: "Request a game ban",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-         let rMember = args[0]       
-         const channel = message.guild.channels.cache.find(channel => channel.name === "game-ban-request")
-        if (!channel)
+      if (message.guild.id !== config.featuredguildID) return;
+      let rMember = args[0]       
+       const channel = message.guild.channels.cache.find(channel => channel.name === "game-ban-request")
+      if (!channel)
             return message.channel.send("Channel not found. Please contact a Founder to fix this.");
   
             const requestbanchannelembed = new Discord.MessageEmbed()

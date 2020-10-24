@@ -1,17 +1,18 @@
 const Discord = require('discord.js');
 const { stripIndents } = require("common-tags");
+const config = require("../../../config.json");
 
 module.exports = {
     name: "suggest",
     category: "public",
-    description: "Suggest a V1 command",
+    description: "Suggest new thing to add for Waterston",
     guildOnly: true,
-    usage: "<mention, id>",
+    usage: "<type> <suggestion>",
     run: async (client, message, args) => {
-        let rMember = args[0]       
-        const channel = message.guild.channels.cache.find(channel => channel.name === "suggestions")
-        
-        if (!channel)
+      if (message.guild.id !== config.featuredguildID) return;
+      let rMember = args[0]       
+      const channel = message.guild.channels.cache.find(channel => channel.name === "suggestions")
+      if (!channel)
             return channel.send("Channel not found. Please contact a Founder to fix this.");
             
             const appealchannelembed = new Discord.MessageEmbed()
@@ -21,7 +22,6 @@ module.exports = {
             .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Suggestion Submitted")
             .setDescription(`${message.member}, sucessfully sent your suggestion to the development team for further review!`)
-
 
             const suggestionembed = new Discord.MessageEmbed()
             .setColor("#0084ff")

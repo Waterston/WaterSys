@@ -1,4 +1,4 @@
-let Discord = require('discord.js')
+const Discord = require('discord.js')
 let db = require('quick.db')
 const kicks = require('../.././models/kicks.js')
 

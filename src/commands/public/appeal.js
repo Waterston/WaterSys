@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const { stripIndents } = require("common-tags");
+const config = require("../../../config.json");
 
 module.exports = {
     name: "appeal",
@@ -7,24 +8,23 @@ module.exports = {
     description: "Appeal a moderation log",
     usage: "<mention, id>",
     run: async (client, message, args) => {
+        if (message.guild.id !== config.featuredguildID) return;
         let rMember = args[0]       
         const channel = message.guild.channels.cache.find(channel => channel.name === "history-appeal-logs")
-        
         if (!channel)
             return channel.send("Channel not found. Please contact a server administrator to fix this.");
             const appealchannelembed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()
-            .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+            .setAuthor(message.author.tag, client.user.displayAvatarURL())
             .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Appeal Request")
             .setDescription(`${message.member}, sucessfully sent your appeal to our Discord Moderation team for further review.`)
 
-
             const embed = new Discord.MessageEmbed()
             .setColor("#0084ff")
             .setTimestamp()
-            .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
+            .setAuthor(message.author.tag, client.user.displayAvatarURL())
             .setFooter(client.user.username, client.user.displayAvatarURL()) 
             .setTitle("Appeal Request")
             .addField('Submitted by:', `${message.member}`)
