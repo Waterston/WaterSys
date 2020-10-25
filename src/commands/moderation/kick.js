@@ -14,9 +14,9 @@ module.exports = {
       timeout: 10000
     }))
 	// To get a GuildMember
-	const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+	const member = message.guild.members.cache.get(args[0]); //|| message.mentions.members.first()
 	// To get a User
-	const user = message.mentions.users.first() || message.client.users.cache.get(args[0]);
+	//const user = message.mentions.users.first() || message.client.users.cache.get(args[0]);
 	let reason = args.slice(1).join(' ')
 	if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
 	if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
