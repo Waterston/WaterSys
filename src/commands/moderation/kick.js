@@ -10,17 +10,13 @@ module.exports = {
   usage: "<mention, id>",
   run: async (client, message, args) => {
    if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
-   if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
-      timeout: 10000
-    }))
-	// To get a GuildMember
-	const member = message.guild.members.cache.get(args[0]); //|| message.mentions.members.first()
-	// To get a User
-	//const user = message.mentions.users.first() || message.client.users.cache.get(args[0]);
+   // To get a GuildMember
+   let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);  
+   if (!member){ return message.channel.send(`⚠️ No user specified, please mention the user.`).then(msg => msg.delete({ timeout: 10000 }))}
 	let reason = args.slice(1).join(' ')
 	if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
 	if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
-    	if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
+    if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	
       kicks.findOne(
       { guildID: message.guild.id, userID: member.id },
