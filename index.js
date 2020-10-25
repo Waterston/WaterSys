@@ -97,7 +97,7 @@ const {
     .setTitle(`Welcome to the ${message.guild.name}`)
     .setDescription(`${member} has joined the State of Waterston! Make sure to review our Server Guidelines and Discord Terms of Service!`)
 
-    channel.send(welcomegeneralembed);
+    message.channel.send(welcomegeneralembed);
     member.send(welcomeembed).catch((error) => {
       return
     });
