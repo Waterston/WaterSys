@@ -11,9 +11,12 @@ module.exports = {
     ownerOnly: true,
     usage: "<id>",
     run: async (client, message, args) => {
-        let g = args[0]
+        let guildID = args[0]
       	if (message.author.id !== config.ownerID) return console.log(`${message.author.tag} attempted to force-leave unsuccessfully.`)
-        if (args.length  < 1) return message.reply(":warning: No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
+        if (!guildID){ return message.reply(":warning: No guild ID specified, please supply a valid ID.").then(msg => msg.delete({timeout: 10000}))}
+
+        const guild = bot.guilds.cache.find((g) => g.id === guildId);
+        if (!guild) { return message.channel.send("The guild ID you supplied does not exist.").then(msg => msg.delete({timeout: 10000}))}
 
         let confirmationEmbed = new Discord.MessageEmbed()
         .setColor("#be1931")
@@ -31,18 +34,23 @@ module.exports = {
         })
         if (!reaction) {
           await msg.delete()
-          return message.channel.send(`Command timed out.`).then(r => r.delete({timeout: 10000}))
+          return message.channel.send(`Command timed out.`).then(msg => msg.delete({timeout: 10000}))
         }
         let emoji = reaction.first().emoji.name
         if (emoji === '❌') {
           await msg.delete()
-          return message.channel.send(`Force-leave canceled. Execute the correct guild ID with the command again.`).then(r => r.delete({timeout: 10000}))
+          return message.channel.send(`Force-leave canceled. Execute the correct guild ID with the command again.`).then(msg => msg.delete({timeout: 10000}))
         } else
         if (emoji === '✅') {
           await msg.delete()
-          client.guilds.cache.get(args[0]).leave()
-          .then(g => console.log(`Successfully force-left the guild: ${g}, issued by ${message.author.tag}.`)).catch(console.error);
-          return message.channel.send(`Successfully force-left the guild: ${g}`)
+
+        try {
+          await guild.leave().then(guildID => console.log(`Successfully force-left the guild: ${guildID}, issued by ${message.author.tag}.`))
+          return message.channel.send(`Successfully force-left the guild: ${guildID}`)
+        } catch (e) {
+          console.error();
+          return message.channel.send("An error occurred in leaving the guild.");
+        }
     }
   }
 }
