@@ -46,7 +46,7 @@ const {
         for (let [id, data] of Object.entries(vers)) {
           let remove = []
           let add = []
-          let member = guild.members.resolve(data.dsc)
+          let member = guild.members.resolve(data.dsc).catch(console.error);
           if (!member) {
             db.delete(`vers.${guildId}.{data.dsc}`)
             continue;

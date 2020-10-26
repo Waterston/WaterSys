@@ -12,7 +12,7 @@ module.exports = {
     usage: "<id>",
     run: async (client, message, args) => {
         let g = args[0]
-      	if (message.author.id !== config.ownerID) return console.log(`${message.author.tag} attempted to force-leave unsuccessfully.`).catch(console.error);
+      	if (message.author.id !== config.ownerID) return console.log(`${message.author.tag} attempted to force-leave unsuccessfully.`)
         if (args.length  < 1) return message.reply(":warning: No guild ID specified, please supply a valid ID.").then(r => r.delete({timeout: 10000}))
 
         let confirmationEmbed = new Discord.MessageEmbed()
