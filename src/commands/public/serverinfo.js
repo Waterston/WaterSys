@@ -16,20 +16,19 @@ module.exports = {
     //let verifLevels = ["None", "Low", "Medium", "High", "Maximum"];
     let region = {
         "brazil": ":flag_br: Brazil",
-        "eu-central": ":flag_eu: Central Europe",
+        "europe": ":flag_eu: Europe",
+        "hongkong": ":flag_hk: Hong Kong",
+        "india": ":flag_in: India",
+        "japan": ":flag_jp: Japan",
+        "russia": ":flag_ru: Russia",
         "singapore": ":flag_sg: Singapore",
-        "us-central": ":flag_us: U.S. Central",
+        "southafrica": ":flag_za:  South Africa",
         "sydney": ":flag_au: Sydney",
+        "us-central": ":flag_us: U.S. Central",
         "us-east": ":flag_us: U.S. East",
         "us-south": ":flag_us: U.S. South",
         "us-west": ":flag_us: U.S. West",
-        "eu-west": ":flag_eu: Western Europe",
-        "vip-us-east": ":flag_us: VIP U.S. East",
-        "london": ":flag_gb: London",
-        "amsterdam": ":flag_nl: Amsterdam",
-        "hongkong": ":flag_hk: Hong Kong",
-        "russia": ":flag_ru: Russia",
-        "southafrica": ":flag_za:  South Africa"
+        "vip-us-east": ":flag_us: U.S. East (VIP)",
     };        
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.guild.name, message.guild.iconURL())
