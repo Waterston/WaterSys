@@ -8,7 +8,7 @@ module.exports = {
     description: "Posts the most updated links for Waterston content",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-       if (message.guild.id !== config.featuredguildID) return;
+       if (message.guild.id != config.featuredguildID) return;
         const embed = new Discord.MessageEmbed()
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setColor("#0084ff")
