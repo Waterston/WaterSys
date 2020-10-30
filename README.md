@@ -1,9 +1,10 @@
 # WaterstonSystems
-[![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&style=flat-square&logo=Discord)](https://discord.gg/Bt6cpnc)
-[![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm&style=flat-square)](https://github.com/discordjs)
-![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
+[![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&logo=Discord)](https://discord.gg/Bt6cpnc)
+[![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm)](https://github.com/discordjs)
+![Maintenance](https://img.shields.io/maintenance/yes/2020)
+[![CodeFactor](https://www.codefactor.io/repository/github/waterston/waterstonsystems/badge?s=78f6ec8e2e74ef18b0a0b757599083a9552359e5)](https://www.codefactor.io/repository/github/waterston/waterstonsystems)
 
-WaterstonSystems is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and Mongoose(https://mongoosejs.com/).
+WaterstonSystems is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/).
 
 ## Installation
 This is intended those that are willing to customize the bot.
