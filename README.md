@@ -1,16 +1,20 @@
-# WaterstonBotv2
+# WaterstonSystems
 [![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&style=flat-square&logo=Discord)](https://discord.gg/Bt6cpnc)
-[![](https://img.shields.io/badge/discord.js-v12.0.0--dev-blue.svg?logo=npm&style=flat-square)](https://github.com/discordjs)
+[![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm&style=flat-square)](https://github.com/discordjs)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020?style=flat-square)
 
-The repository for the WaterstonSystem, the custom Discord bot for Roblox verification and moderation.
+WaterstonSystems is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and Mongoose(https://mongoosejs.com/).
 
-### Installation
-WaterstonSystems is powered by [Node.js](https://nodejs.org/) and [Discord.js](https://discord.js.org/).
+## Installation
+This is intended those that are willing to customize the bot.
 
-The bot is mainly for private use, and as such, we will not provide instruction on how to install for your own use.
+### Windows
+* Install Node 12.x and MongoDB (if hosting locally)
+* Open a Command Prompt/PowerShell/etc. session with elevated privilege and run `npm install -g --production windows-build-tools`.
+* Install the bot's dependencies (excluding devDependencies): `npm install --production`
+* Set up the environment variables (list below) to include your Discord bot token and Mongoose URI, and replace the default values in `config.json`
 
-### Environment Variables
+## Environment Variables
 This Discord bot relies on environment variables to ensure smooth and secure deployments. There is a table listing all the variables the bot will attempt to search for on startup, for future references.
 | Variable | Input | Description |
 |-|-|-|
