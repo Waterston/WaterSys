@@ -1,7 +1,7 @@
 const { readdirSync } = require("fs");
 const Discord = require('discord.js');
 const ascii = require("ascii-table");
-const cooldowns = new Discord.Collection();
+//const cooldowns = new Discord.Collection();
 
 let table = new ascii("Commands");
 table.setHeading("Command", "Status");
@@ -10,10 +10,10 @@ module.exports = (client) => {
     readdirSync(`./src/commands/`).forEach(dir => {
         const commands = readdirSync(`./src/commands/${dir}/`).filter(file => file.endsWith(".js"));
         for (let file of commands) {
-            let pull = require(`../commands/${dir}/${file}`);
+            let command = require(`../commands/${dir}/${file}`);
     
-            if (pull.name) {
-                client.commands.set(pull.name, pull);
+            if (command.name) {
+                client.commands.set(command.name, command);
                 table.addRow(file, 'ON');
             } else {
                 table.addRow(file, `OFF  -> missing a help.name, or help.name is not a string.`);
@@ -21,10 +21,11 @@ module.exports = (client) => {
             }
     
             /// If there's an aliases key, read the aliases.
-            if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
+            if (command.aliases && Array.isArray(command.aliases)) command.aliases.forEach(alias => client.aliases.set(alias, command.name));
 
+            
             /// If there's a guildOnly key -- not working yet
-            /*if (command.guildOnly && message.channel.type === 'dm') {
+            /*if (command.guildOnly && message.channel.type !== "text") {
                 return message.reply('This command cannot be executed in direct messages.');
             }*/
 
