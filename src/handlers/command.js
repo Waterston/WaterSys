@@ -23,10 +23,15 @@ module.exports = (client) => {
             /// If there's an aliases key, read the aliases.
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
 
-            /// If there's a guildOnly key
-            if (command.guildOnly && message.channel.type === 'dm') {
+            /// If there's a guildOnly key -- not working yet
+            /*if (command.guildOnly && message.channel.type === 'dm') {
                 return message.reply('This command cannot be executed in direct messages.');
-            }
+            }*/
+
+            /// If there's a ownerOnly key -- not working yet
+            /*if (command.ownerOnly == true) {
+                if (message.author.id !== config.ownerID) return;
+            }*/
 
            /// If there's a cooldown key, read them as well.
            /* if (!cooldowns.has(commands.name)) {
