@@ -24,9 +24,9 @@ module.exports = (client) => {
             if (pull.aliases && Array.isArray(pull.aliases)) pull.aliases.forEach(alias => client.aliases.set(alias, pull.name));
 
             /// If there's a guildOnly key
-            /*if (command.guildOnly && message.channel.type === 'dm') {
+            if (command.guildOnly && message.channel.type === 'dm') {
                 return message.reply('This command cannot be executed in direct messages.');
-            }*/
+            }
 
            /// If there's a cooldown key, read them as well.
            /* if (!cooldowns.has(commands.name)) {
