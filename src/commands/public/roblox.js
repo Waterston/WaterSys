@@ -3,10 +3,10 @@ const Discord = require('discord.js');
 const fetch = require('node-fetch')
 
 module.exports = {
-    name: "whois",
-    aliases: ['roblox', 'info'],
-    category: "info",
-    description: "Identify and retrieve the specified user's information",
+    name: "roblox",
+    aliases: ['rwhois', 'rinfo'],
+    category: "public",
+    description: "Identify and retrieve the specified user's Roblox information",
     guildOnly: true,
     run: async (client, message, args) => {
 
@@ -27,7 +27,7 @@ module.exports = {
         .addField("Roblox ID", `${body.robloxId}`, true)
         .addField("Join Date", `${UserInfo.created}`, true)
         .addField("Friends", `${friends.count}`, true)
-        .setColor("#0084ff")
+        .setColor("#e51f12")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
         //.setThumbnail(RobloxAvatar)
