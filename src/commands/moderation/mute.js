@@ -18,7 +18,7 @@ module.exports = {
 	if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	    
 	let reason = args.slice(2).join(" ");
-        if(!reason) reason = "No reason specified"
+  if(!reason) reason = `No reason specified`
 	
 	let muterole = message.guild.roles.cache.find(r => r.name === "Muted");
 	if (!muterole) return message.reply(":warning: An error occurred in finding `Muted` role. Please contact a server administrator.")

@@ -1,4 +1,3 @@
-const db = require('quick.db')
 const Discord = require('discord.js')
 const Warns = require('../.././models/warnings.js')
 module.exports = {

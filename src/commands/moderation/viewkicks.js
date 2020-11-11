@@ -1,5 +1,4 @@
 const Discord = require('discord.js')
-let db = require('quick.db')
 const Kicks = require('../.././models/kicks.js')
 
 module.exports = {

@@ -1,6 +1,4 @@
 const Discord = require('discord.js')
-let db = require('quick.db')
-
 
 module.exports = {
   name: "ban",
@@ -13,7 +11,7 @@ module.exports = {
     let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
     if (!member){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
     let reason = args.slice(1).join(' ')
-    if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
+    if(!reason) reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`:no_entry: You cannot run this command on yourself.`)
     if (client.user.id === member.user.id) return message.channel.send(`:no_entry: You cannot run this command on the bot.`).catch(console.error);
     await member.ban()

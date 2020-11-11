@@ -1,4 +1,3 @@
-const db = require('quick.db')
 const Discord = require('discord.js')
 const warn = require('../.././models/warnings.js')
 module.exports = {
@@ -17,7 +16,7 @@ module.exports = {
 	if (client.user.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	  
 	let reason = args.slice(1).join(' ')
-	if (reason.replace(/ /g, '').trim() === '') reason = `No reason specified`
+	if(!reason) reason = `No reason specified`
 	
 	  warn.findOne(
 	      { guildID: message.guild.id, userID: user.id },
