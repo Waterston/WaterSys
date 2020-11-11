@@ -29,7 +29,7 @@ module.exports = {
         .addField("Roblox ID", `${body.robloxId}`, true)
         .addField("Join Date", `${UserInfo.created}`, true)
         .addField("Friends", `${friends.count}`, true)
-        .addField("Followers | Followings", `${followers.count} | ${following.count}`, true)
+        .addField("Followers | Following", `${followers.count} | ${following.count}`, true)
         .setColor("#e51f12")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
