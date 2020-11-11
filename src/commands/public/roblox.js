@@ -16,6 +16,8 @@ module.exports = {
         let Status = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
         let UserInfo = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}`).then(res => res.json())
         let friends = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/friends/count`).then(res => res.json())
+        let followers = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followers/count`).then(res => res.json())
+        let following = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followings/count`).then(res => res.json())
         //let RobloxAvatar = await getAccountThumbnail(body.robloxId)
 
         // Define the first embed, which will contain Roblox info.
@@ -27,6 +29,7 @@ module.exports = {
         .addField("Roblox ID", `${body.robloxId}`, true)
         .addField("Join Date", `${UserInfo.created}`, true)
         .addField("Friends", `${friends.count}`, true)
+        .addField("Followers | Followings", `${followers.count} | ${following.count}`, true)
         .setColor("#e51f12")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
