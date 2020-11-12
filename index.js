@@ -21,6 +21,7 @@ const client = new Client({
 
 client.commands = new Collection();
 client.aliases = new Collection();
+//client.cooldowns = new Collection();
 const config = require("./config.json");
 
 
@@ -181,7 +182,6 @@ client.on("message", async message => {
                   message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
               }
   
-  //const prefix = "!"; -This was replaced with the "prefix" option in config.json.
   if (message.author.bot) return;
   if (!message.guild) return;
   if (!message.content.startsWith(config.prefix)) return;
