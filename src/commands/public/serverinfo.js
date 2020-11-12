@@ -5,7 +5,6 @@ module.exports = {
     aliases: ['sinfo', 'server'],
     category: "public",
     description: "Retrieve information for the current server",
-    usage: "<mention, id>",
     run: async (client, message, args) => {
     function checkDays(date) {
         let now = new Date();
@@ -13,7 +12,13 @@ module.exports = {
         let days = Math.floor(diff / 86400000);
         return days + (days == 1 ? " day" : " days") + " ago";
     };
-    //let verifLevels = ["None", "Low", "Medium", "High", "Maximum"];
+    let verifLevels = {
+        "NONE": "None", 
+        "LOW": "Low", 
+        "MEDIUM": "Medium", 
+        "HIGH": "High", 
+        "VERY_HIGH": "Maximum",
+    };
     let region = {
         "brazil": ":flag_br: Brazil",
         "europe": ":flag_eu: Europe",
@@ -34,16 +39,15 @@ module.exports = {
         .setAuthor(message.guild.name, message.guild.iconURL())
         .setColor("#0084ff")
         .addField("Name", message.guild.name, true)
-        .addField("Server ID", message.guild.id, true)
-        .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+        .addField("Guild ID", message.guild.id, true)
+        .addField("Owner", `<@${message.guild.ownerID}>`, true)
         .addField("Region", region[message.guild.region], true)
         .addField("Members | Bots", `${message.guild.members.cache.filter(member => !member.user.bot).size} | ${message.guild.members.cache.filter(member => member.user.bot).size}`, true)
-        //.addField("Verification Level", verifLevels[guild.verificationLevel], true)
+        .addField("Verification Level", verifLevels[message.guild.verificationLevel], true)
         .addField("Total Channels", message.guild.channels.cache.size, true)
-        .addField('Text Channels',`${message.guild.channels.cache.filter(m => m.type === 'text').size}`,true)
-        .addField('Voice Channels',`${message.guild.channels.cache.filter(m => m.type === 'voice').size}`,true)
+        .addField('Text | Voice Channels',`${message.guild.channels.cache.filter(m => m.type === 'text').size} | ${message.guild.channels.cache.filter(m => m.type === 'voice').size}`,true)
         .addField("Roles", message.guild.roles.cache.size, true)
-        .addField("Creation Date", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
+        .addField("Creation Date", `${message.channel.guild.createdAt.toLocaleDateString()} (${checkDays(message.channel.guild.createdAt)})`, true)
         .setThumbnail(message.guild.iconURL({ format: 'png', dynamic: true, size: 256 }))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
