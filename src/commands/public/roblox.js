@@ -18,7 +18,7 @@ module.exports = {
         let friends = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/friends/count`).then(res => res.json())
         let followers = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followers/count`).then(res => res.json())
         let following = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followings/count`).then(res => res.json())
-        //let RobloxAvatar = await getAccountThumbnail(body.robloxId)
+        //let thumbnail = await getAccountThumbnail(body.robloxId)
 
         // Define the first embed, which will contain Roblox info.
         let whoembed = new Discord.MessageEmbed()
@@ -33,7 +33,7 @@ module.exports = {
         .setColor("#e51f12")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
-        //.setThumbnail(RobloxAvatar)
+        //.setThumbnail(thumbnail)
         .setTimestamp()
 
         message.channel.send(whoembed)
@@ -44,5 +44,5 @@ module.exports = {
     let {
       body
     } = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${id}&size=352x352&format=Png&isCircular=false`)
-    return body.data[0].imageUrl
+    return body.data.imageUrl
   }*/
