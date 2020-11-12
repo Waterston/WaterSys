@@ -21,6 +21,7 @@ const {
   
   client.commands = new Collection();
   client.aliases = new Collection();
+  //client.cooldown = new Collection();
   const config = require("./config.json");
   
   

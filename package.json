@@ -25,7 +25,8 @@
 		"dotenv": "^8.2.0",
 		"mongoose": "^5.10.13",
 		"ms": "^2.1.2",
-		"node-superfetch": "^0.1.10"
+		"node-superfetch": "^0.1.10",
+		"quick.db": "^7.1.2"
 	},
 	"devDependencies": {},
 	"keywords": []
