@@ -8,13 +8,13 @@ module.exports = {
   guildOnly: true,
   usage: "<mention, id>",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return; //message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+      if (!message.member.roles.cache.get('756741750168748153')) return message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
       if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
         timeout: 10000
         }))
-          
+
 	const user = message.mentions.members.first() || message.guild.members.cache.get(args[1]) || message.member
-	
+
 	const nowarns = new Discord.MessageEmbed()
 	      .setColor("#0084ff")
 	      .setAuthor(message.author.tag, message.author.displayAvatarURL({
@@ -25,7 +25,7 @@ module.exports = {
 	      .setDescription(`<@${user.user.id}> has no previous warning history.`)
 	      .setTimestamp()
 	      .setFooter(client.user.username, client.user.displayAvatarURL()) 
-        
+
 	Warns.find(
 	  {guildID: message.guild.id, userID: user.id}, 
 	  async (err, data) => {
@@ -35,9 +35,6 @@ module.exports = {
 
 	    const warningsEmbed = new Discord.MessageEmbed()
 	    .setColor("#0084ff")
-	    .setAuthor(message.author.tag, message.author.displayAvatarURL({
-		dynamic: true
-	    }))
 	    .setTitle(`Warning(s) History (${user.id})`)
 	    .setTimestamp()
 	    .setFooter(`Total Warnings: ${gettingwarns}`, client.user.displayAvatarURL()) 
