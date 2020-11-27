@@ -105,6 +105,7 @@ client.on("guildMemberAdd", member =>{
 })
 
 client.on("messageDelete", async message =>{
+  if(message.author.bot) return
    const mDelete = new Discord.MessageEmbed()
   .setColor("#0084ff")
   .setTimestamp()
@@ -116,7 +117,7 @@ client.on("messageDelete", async message =>{
   .addField("Occurance: ", message.channel)
    
    
-   const logchannel = client.channels.cache.find(channel => channel.name === "message-logs")
+   const logchannel = message.guild.channels.cache.find(channel => channel.id === '753589782352887809')
    if (!logchannel) return;
   
    logchannel.send(mDelete);
@@ -177,7 +178,7 @@ client.on("message", async message => {
     for (var i in blacklisted) {
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
     }
-              if (foundInText) {
+             if (foundInText && !message.member.roles.cache.some(role =>['709047575180869663', '709047380800176189', '730637644270403635'].includes(role.id))) {
                   message.delete();
                   message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
               }
