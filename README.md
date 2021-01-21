@@ -1,17 +1,19 @@
-# WaterstonSystems
+# WaterSys
+<sup>(formerly known as WaterstonSystems)</sup>
+
 [![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&logo=Discord)](https://discord.gg/Bt6cpnc)
 [![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm)](https://github.com/discordjs)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
 [![CodeFactor](https://www.codefactor.io/repository/github/waterston/waterstonsystems/badge?s=78f6ec8e2e74ef18b0a0b757599083a9552359e5)](https://www.codefactor.io/repository/github/waterston/waterstonsystems)
 
-WaterstonSystems is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/).
+WaterSys is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/).
 
 ## Installation
-This is intended those that are willing to customize the bot.
+This is intended those that are willing to customize the bot. We will not provide support (other than what is documented here) on setting it up for your own use.
 
 ### Windows
 * Install Node 12.x and MongoDB (if hosting locally)
-* Open a Command Prompt/PowerShell/etc. session with elevated privilege and run `npm install -g --production windows-build-tools`.
+* Open a Command Prompt/PowerShell/Terminal/etc. session with elevated privilege and run `npm install -g --production windows-build-tools`.
 * Install the bot's dependencies (excluding devDependencies): `npm install --production`
 * Set up the environment variables (list below) to include your Discord bot token and Mongoose URI, and replace the default values in `config.json`
 
