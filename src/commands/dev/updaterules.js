@@ -28,7 +28,7 @@ module.exports = {
 		{ name: '1.7: Message Spam', value: `Do not start spamming (sending the same message indiscriminately to large numbers of recipients) members continuously in any channel on this server. This also includes bulk messages also referred to as copy-pasta, taking up a lot of space.`, inline: false },
 		{ name: '1.8: Member Privacy', value: `Do not expose any personal photos, names, etc. without the person's permission. Please respect each members' privacy balance from in real life and Roblox/Discord. This also includes posting unfamiliar links/location (IP) grabbers.`, inline: false },
 		{ name: '1.9: Advertising', value: `Advertising is strictly forbidden. This includes Roblox groups, Discord servers, etc. Commerce-approved businesses are exempt from this rule for promoting their own business in Waterston in specified channels. Do not message people your Discord Servers as well, that will result in an immediate ban.`, inline: false },
-		{ name: '1.10: Controversial Topics', value: `When chatting with other server members, please avoid discussing controversial topic that may be current events, political, religious, etc. It can potentially be seen as offensive or toxic.`, inline: false }	
+		{ name: '1.10: Controversial Topics', value: `When chatting with other server members, please avoid discussing controversial topic that may be current events, politics, religions, etc. It can potentially be seen as offensive or toxic.`, inline: false }	
 	 )
 	
 	let ure3 = new Discord.MessageEmbed()
