@@ -13,13 +13,13 @@ module.exports = {
 	 let ure1 = new Discord.MessageEmbed()
     .setColor("#0084ff")
     .setImage(`https://i.imgur.com/cwVphYV.png`)
-	.setDescription(`**Welcome to the official State of Waterston Discord Server!**\n\nThe State of Waterston was founded and created by Bandelqs and Pearism on Roblox.\n\n\n**The rules are __subject to change at any time__. By using the server, you acknowledge and agree to following all rules listed below.**`)
+	.setDescription(`**Welcome to the official Vena Studios Discord Server!**\n\nThe State of Waterston was founded and created by Bandelqs and Pearism on Roblox.\n\n\n**The rules are __subject to change at any time__. By using the server, you acknowledge and agree to following all rules listed below.**`)
 	 
 	let ure2 = new Discord.MessageEmbed()
 	.setTitle(`Section 1, General Server Guidelines`)
     .setColor("#00a2cb")
         .addFields(
-		{ name: '1.1: Discord Nicknames', value: `Please set your Discord nickname as your Roblox username at all times. If you're in a department, you must include your callsign as well. It must be visible for everyone to see. You should not have your nickname set to something you're not apart of or for example "Cabinet" of a department, use your department-issued callsign. Do not include non-affiliated State of Waterston entities as well.`, inline: false },
+		{ name: '1.1: Discord Nicknames', value: `Please set your Discord nickname as your Roblox username at all times. Do not include non-affiliated Vena Studios entities as well.`, inline: false },
 		{ name: '1.2: Respecting Members', value: `Treat everyone with respect here. Do not treat someone differently based on race, sex, sexual orientation, disability, or religious belief. Targeting someone in order to provoke them is forbidden.`, inline: false },
 		{ name: '1.3: Language Speaking', value: `This is an English speaking Discord sever. Please keep all conversations in English or minimal foreign languages. Common phrases between both languages such as Hola, Bonjour, or Uno are allowed. This is so that it is easier to moderate and keep the server safe.`, inline: false },
 		{ name: '1.4: Server Misuse', value: `Do not misuse or abuse anything apart of the server, including, but not limited to: commands, channels, etc. Keep it relevant to the channel topic in the correct text channels.`, inline: false },
@@ -47,22 +47,22 @@ module.exports = {
         .addFields(
 		{ name: '3.1: Discord Moderator', value: `Discord Moderators are allowed to deem what your punishment is based on what rule(s) were broken. Don't argue with your punishment or you will be muted.`, inline: false },
 		{ name: '3.2: Warnings/Kicks Limit', value: `When you receive three (3) warnings, you will be kicked from the State of Waterston server. If you receive another three (3) warnings when you return, you will be banned. Appealed warnings/kicked will be removed and not counted towards your next moderation action.`, inline: false },
-		{ name: '3.4: Zero Tolerance', value: `Waterston uses a Zero Tolerance policy set in place to prevent toxicity among server members. Raiding, racial profanity, mass-tagging, posting NSFW (pornography/gore), and mass spamming will result in an automatic ban. Depending on the severity of the rule broken, you will be automatically muted, warned, or kicked from the server.`, inline: false },
+		{ name: '3.4: Zero Tolerance', value: `Vena Studios uses a Zero Tolerance policy set in place to prevent toxicity among server members. Raiding, racial profanity, mass-tagging, posting NSFW (pornography/gore), and mass spamming will result in an automatic ban. Depending on the severity of the rule broken, you will be automatically muted, warned, or kicked from the server.`, inline: false },
 		{ name: '3.5: Common Sense', value: `Please use common sense and basic knowledge when conducting yourself. Do not do anything that you know will get you punished. Additionally, do not try to find loophole in the rules as it will apply to any situations.`, inline: false },
 		{ name: '3.6: Impersonation', value: `Any form of impersonation (by username, profile picture, similar Roblox username, etc) of another user is prohibited and will result in a permanent ban.`, inline: false },
-		{ name: '3.7: Waterston Founders', value: `Waterston Founders shall be known as Bandelqs & Pearism. They are above all rules listed above. **Please refrain from tagging without a plausible reason** and use the chain of command system.`, inline: false },
-		{ name: '3.8: Discord Term of Services & Community Guidelines', value: `We are required to ensure that this server follows the [Terms of Service](https://discord.com/terms) and [Community Guidelines](https://discord.com/guidelines) set by Discord (linked for your convenience). We are also legally required to remove any user that is under the age of thirteen years old. We recommend not discussing or joking about your age on here as it can get you banned.`, inline: false }
+		{ name: '3.7: Waterston Founders', value: `Vena Studios Founders shall be known as Bandelqs & Pearism. They are above all rules listed above. **Please refrain from tagging without a plausible reason** and use the chain of command system.`, inline: false },
+		{ name: '3.8: Discord Term of Services & Community Guidelines', value: `We are required to ensure that this server follows the [Terms of Service](https://discord.com/terms) and [Community Guidelines](https://discord.com/guidelines) set by Discord (linked for your convenience). We are also legally required to remove any user that is under the age of thirteen years old. We recommend that everyone avoid discussing or joking about their age on here as it can get you banned.`, inline: false }
 		
 	 )
 	
-     client.channels.resolve('709052688368664688').send(ure1)
-	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
-	 client.channels.resolve('709052688368664688').send(ure2)
-	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
-	 client.channels.resolve('709052688368664688').send(ure3)
-	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
-	 client.channels.resolve('709052688368664688').send(ure4)
-	 client.channels.resolve('709052688368664688').send(`https://i.imgur.com/t3g96kU.gif`)
+     client.channels.resolve('800036709756436551').send(ure1)
+	 client.channels.resolve('800036709756436551').send(`https://i.imgur.com/t3g96kU.gif`)
+	 client.channels.resolve('800036709756436551').send(ure2)
+	 client.channels.resolve('800036709756436551').send(`https://i.imgur.com/t3g96kU.gif`)
+	 client.channels.resolve('800036709756436551').send(ure3)
+	 client.channels.resolve('800036709756436551').send(`https://i.imgur.com/t3g96kU.gif`)
+	 client.channels.resolve('800036709756436551').send(ure4)
+	 client.channels.resolve('800036709756436551').send(`https://i.imgur.com/t3g96kU.gif`)
 	   
   }
 }; 
