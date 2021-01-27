@@ -5,7 +5,7 @@ module.exports = {
     name: "links",
     aliases: ['link', 'invite', 'roblox'],
     category: "public",
-    description: "Posts the most updated links for Waterston content",
+    description: "Posts the most updated links for Vena Studios content",
     usage: "<mention, id>",
     run: async (client, message, args) => {
        if (message.guild.id != config.featuredguildID) return;
@@ -13,8 +13,8 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setColor("#0084ff")
         .setTitle("Links")
-        .addField("Server", "https://discord.io/waterston", false)
-        .addField("Roblox Group", "https://www.roblox.com/groups/5231364", false)
+        .addField("Server", "https://discord.gg/dhusNR9rvv", false)
+        .addField("Roblox Group", "https://www.roblox.com/groups/9180170", false)
         .addField("Website", "Coming soon", false)
         .addField("Bot Invite", "Coming soon", false)
         .setFooter(client.user.username, client.user.displayAvatarURL())
