@@ -117,7 +117,7 @@ client.on("messageDelete", async message =>{
   .addField("Occurance: ", message.channel)
    
    
-   const logchannel = message.guild.channels.cache.find(channel => channel.id === '753589782352887809')
+   const logchannel = message.guild.channels.cache.find(channel => channel.id === '800525044278493215')
    if (!logchannel) return;
   
    logchannel.send(mDelete);

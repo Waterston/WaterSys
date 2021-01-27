@@ -41,7 +41,7 @@ module.exports = {
 
         mutee.roles.remove(muterole.id, reason).catch(console.error).then(() => {
             message.channel.send(unmutedlogembed)
-            return client.channels.resolve('709074878912790529').send(unmutedembed)
+            client.channels.cache.find(channel => channel.name === "incident-logs").send(unmutedembed)
         })
   }
 }; 

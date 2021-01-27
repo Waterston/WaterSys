@@ -24,10 +24,10 @@ module.exports = {
     	{ name: 'Punishment Database', value: `https://trello.com/b/8W2LM4eD`, inline: false }
 	 )
 	
-	 client.channels.resolve('754166898366611528').send(usb1)
-	 client.channels.resolve('754166898366611528').send(`https://i.imgur.com/t3g96kU.gif`)
-	 client.channels.resolve('754166898366611528').send(usb2)
-	 client.channels.resolve('754166898366611528').send(`https://i.imgur.com/t3g96kU.gif`)
+	 client.channels.resolve('803840813708738601').send(usb1)
+	 client.channels.resolve('803840813708738601').send(`https://i.imgur.com/t3g96kU.gif`)
+	 client.channels.resolve('803840813708738601').send(usb2)
+	 client.channels.resolve('803840813708738601').send(`https://i.imgur.com/t3g96kU.gif`)
 
 	   
   }

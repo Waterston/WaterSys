@@ -40,7 +40,7 @@ module.exports = {
 	    )    
       .setTimestamp()
       .setFooter(client.user.username, client.user.displayAvatarURL()) 
-    client.channels.resolve('709074878912790529').send(blogEmbed)
+    client.channels.cache.find(channel => channel.name === "incident-logs").send(blogEmbed)
     return message.channel.send(banembed)
   }
 }

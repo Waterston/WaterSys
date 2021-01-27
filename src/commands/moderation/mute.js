@@ -55,7 +55,7 @@ module.exports = {
 	    
 	 member.roles.add(muterole.id, reason)
 	 message.channel.send(mutedlogembed)
-         client.channels.resolve('757443329582563410').send(mutedembed)
+   client.channels.cache.find(channel => channel.name === "incident-logs").send(mutedembed)
 	    
 	message.channel.send(`${member.user.tag} has now been muted for ${ms(ms(time))}`);
 	    
