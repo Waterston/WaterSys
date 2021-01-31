@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/discord/659451316707524618?label=Waterston%20Discord&logo=Discord)](https://discord.gg/Bt6cpnc)
 [![](https://img.shields.io/npm/v/discord.js?label=discord.js&logo=npm)](https://github.com/discordjs)
 ![Maintenance](https://img.shields.io/maintenance/yes/2020)
-[![CodeFactor](https://www.codefactor.io/repository/github/waterston/waterstonsystems/badge?s=78f6ec8e2e74ef18b0a0b757599083a9552359e5)](https://www.codefactor.io/repository/github/waterston/waterstonsystems)
+[![CodeFactor](https://www.codefactor.io/repository/github/waterston/watersys/badge?s=07bfe9d499d8c4b0a7cbc9ce3c7359d64a3ab522)](https://www.codefactor.io/repository/github/waterston/watersys)
 
 WaterSys is a custom Roblox verification and moderation bot powered with [Discord.js](https://discord.js.org/) and [Mongoose](https://mongoosejs.com/).
 
