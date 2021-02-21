@@ -3,8 +3,8 @@ const {
   Collection
 } = require("discord.js");
 const Discord = require("discord.js");
-const db = require('quick.db')
-const fetch = require('node-superfetch')
+//const db = require('quick.db')
+//const fetch = require('node-superfetch')
 require('dotenv').config()
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOOSE, {
@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGOOSE, {
   useUnifiedTopology: true,
   useFindAndModify: false,}, (err) => {
       if (err) return console.error(err);
-      console.log('Connected to MongoDB!');
+      console.log('Connected to MongoDB.');
 });
 
 const client = new Client({
@@ -34,11 +34,11 @@ client.on("ready", () => {
   client.user.setPresence({
     status: "online",
     activity: {
-      name: "!register | !help",
+      name: "!help | watersys.pearo.icu",
       type: "WATCHING"
     }
   });
-  client.setInterval(async () => {
+  /* client.setInterval(async () => {
     let all = db.fetch(`vers`)
     if (!all) return
     if (all.length < 1) return
@@ -76,27 +76,26 @@ client.on("ready", () => {
         db.set(`vers.${guildId}.${data.dsc}`, data)
       }
     }
-  }, 300000)
+  }, 300000) */
 })
 
 client.on("guildMemberAdd", member =>{
-  const channel = client.channels.cache.find(channel => channel.name === "public-lounge")
+  const channel = client.channels.cache.find(channel => channel.name === "secondary")
   const welcomeembed = new Discord.MessageEmbed()
-  .setColor("#0084ff")
+  .setColor("#d37842")
   .setTimestamp()
   .setFooter(client.user.username, client.user.displayAvatarURL())
-  .setAuthor(`WaterstonSystems`, client.user.displayAvatarURL())
-  .setTitle("Welcome to the State of Waterston")
-  .setDescription(`Hi, ${member}. We're happy that you decided to join the State of Waterston Discord Server! While you are here, please review our Server Guidelines and Discord Terms of Service!`)
-  .addField('Roblox Group', `https://www.roblox.com/groups/5231364`)
-  .addField('Punishment Database', 'https://trello.com/b/8W2LM4eD')
+  .setAuthor(client.user.username, client.user.displayAvatarURL())
+  .setTitle(`Welcome to the ${message.guild.name}`)
+  .setDescription(`Hi, ${member}. We're happy that you decided to join ${message.guild.name}! While you are here, please review our Server Guidelines!`)
+  .addField('Roblox Group', `https://www.roblox.com/groups/9180170`)
 
   const welcomegeneralembed = new Discord.MessageEmbed()
-  .setColor("#0084ff")
+  .setColor("#d37842")
   .setTimestamp()
   .setFooter(client.user.username, client.user.displayAvatarURL())
-  .setTitle(`Welcome to the ${message.guild.name}`)
-  .setDescription(`${member} has joined the State of Waterston! Make sure to review our Server Guidelines and Discord Terms of Service!`)
+  .setTitle(`Welcome to ${message.guild.name}`)
+  .setDescription(`${member} has joined the ${message.guild.name}! Make sure to review our Server Guidelines!`)
 
   message.channel.send(welcomegeneralembed);
   member.send(welcomeembed).catch((error) => {
@@ -107,7 +106,7 @@ client.on("guildMemberAdd", member =>{
 client.on("messageDelete", async message =>{
   if(message.author.bot) return
    const mDelete = new Discord.MessageEmbed()
-  .setColor("#0084ff")
+  .setColor("#d37842")
   .setTimestamp()
   .setFooter(client.user.username, client.user.displayAvatarURL()) 
   .setAuthor(client.user.username, client.user.displayAvatarURL())
@@ -116,15 +115,13 @@ client.on("messageDelete", async message =>{
   .addField("Author: ", message.author.tag)
   .addField("Occurance: ", message.channel)
    
-   
-   const logchannel = message.guild.channels.cache.find(channel => channel.id === '800525044278493215')
+   const logchannel = client.channels.cache.find(channel => channel.name === "message-logs")
    if (!logchannel) return;
-  
    logchannel.send(mDelete);
 
 })
 
-async function getAuxillaryGroups(id) {
+/* async function getAuxillaryGroups(id) {
   let {
     body
   } = await fetch.get(`https://groups.roblox.com/v2/users/${id}/groups/roles`)
@@ -159,7 +156,7 @@ async function getMainRoleGroup(id) {
   let {
     body
   } = await fetch.get(`https://groups.roblox.com/v2/users/${id}/groups/roles`)
-  let group = body.data.find(g => g.group.id === 5231364)
+  let group = body.data.find(g => g.group.id === 9180170)
   if (!group) return {
     name: false,
     id: 0
@@ -168,17 +165,17 @@ async function getMainRoleGroup(id) {
     name: group.role.name,
     id: group.role.id
   }
-}
+} */
 
 
 client.on("message", async message => {
-  //Blacklist Word Script
+  //This is simply a list of blacklisted words that the bot should look for. This is not intended to offend anyone looking through this code.
   let blacklisted = ['sped', 'nigga', 'nigger', 'niga', 'fhag', 'faggot', 'fag', 'smd', 'retard', 'boob', 'anal', 'vagina', 'pussy', 'dick', 'penis', 'porn', 'sperm', 'diok', 'yhole', 'whore', 'slut', 'clit', 'spastic', 'spaz', 'coochie', 'dike'];
   let foundInText = false;
     for (var i in blacklisted) {
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
     }
-             if (foundInText && !message.member.roles.cache.some(role =>['709047575180869663', '709047380800176189', '730637644270403635'].includes(role.id))) {
+             if (foundInText && !message.member.roles.cache.some(role =>['800033395710099476', '800033394725093406'].includes(role.id))) { //ID in order: Community Manager, Administrator
                   message.delete();
                   message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
               }

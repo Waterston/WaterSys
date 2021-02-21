@@ -28,7 +28,8 @@ module.exports = {
 		{ name: '1.7: Message Spam', value: `Do not start spamming (sending the same message indiscriminately to large numbers of recipients) members continuously in any channel on this server. This also includes bulk messages also referred to as copy-pasta, taking up a lot of space.`, inline: false },
 		{ name: '1.8: Member Privacy', value: `Do not expose any personal information without that person's permission. Please respect each members' privacy balance from real life and Discord or other online services. This also includes posting unfamiliar links (fake Discord Nitro links, IP grabbers, cookie loggers, etc.)`, inline: false },
 		{ name: '1.9: Advertisement', value: `Advertising is strictly forbidden. This includes Roblox groups, Discord servers, etc. Do not send unsolicited messages to people, as that is prohibited.`, inline: false },
-		{ name: '1.10: Controversial Topics', value: `When chatting with other server members, please avoid discussing controversial topic that may be current events, politics, religion, etc. It can potentially be seen as offensive or toxic.`, inline: false }	
+		{ name: '1.10: Controversial Topics', value: `When chatting with other server members, please avoid discussing controversial topic that may be current events, politics, religion, etc. It can potentially be seen as offensive or toxic.`, inline: false },
+		{ name: '1.11: Bot Usage', value: `Bot commands should only be used in <#800039773900767252>. Failure to do so will result in a warning. Community Managers and above are allowed to use bot commands in any channels.`, inline: false }	
 	 )
 	
 	let ure3 = new Discord.MessageEmbed()

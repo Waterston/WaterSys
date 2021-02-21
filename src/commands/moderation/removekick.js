@@ -11,10 +11,9 @@ module.exports = {
   guildOnly: true,
   usage: "<id>",
   run: async (client, message, args) => {
-	  if (!message.member.roles.cache.get('709047575180869663')) return; //message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+	if (!message.member.roles.cache.some(role => role.name === 'Community Manager')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
     const user = args[0]
     const id = args[1]
-
         
     if (!user) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000

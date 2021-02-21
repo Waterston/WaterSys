@@ -1,7 +1,7 @@
 {
-	"name": "waterstonsystems",
-	"description": "WaterstonSystem, the custom Discord bot for Roblox verification and moderation.",
-	"version": "3.0.9",
+	"name": "watersys",
+	"description": "WaterSys, the custom Discord bot for Roblox verification and moderation.",
+	"version": "3.1.0",
 	"engines": {
 		"node": "12.x"
 	},

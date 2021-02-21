@@ -8,6 +8,6 @@ module.exports = {
     usage: "<mention, id>",
     ownerOnly: true,
     run: async (client, message, args) => {
-        message.channel.send("Test command.")
+        message.channel.send("Test command executed.")
     }
 }

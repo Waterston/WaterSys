@@ -10,11 +10,11 @@ module.exports = {
 	usage: "<mention, id>",
 	
     run: async (client, message, args) => {
-        if (!message.member.roles.cache.get('709047575180869663')) return;  //message.channel.send(`⛔ Insufficient permissions.`).then(r => r.delete({timeout: 10000}))
+    if (!message.member.roles.cache.some(role => role.name === 'Community Manager')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
     if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({timeout: 10000}))
        let member = message.mentions.members.first()
 
-        if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
+  if (message.author.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
 	if (client.user.id === member.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	    
 	let reason = args.slice(2).join(" ");

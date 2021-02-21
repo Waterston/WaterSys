@@ -7,7 +7,7 @@ module.exports = {
     description: "Friendly version of Navy SEALs copypasta",
     usage: "<mention, id>",
     run: async (client, message, args) => {
-    if (!message.member.roles.cache.get('709047575180869663')) return;
+    if (!message.member.roles.cache.some(role => role.name === 'Community Manager')) return;
         const embed = new Discord.MessageEmbed()
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())

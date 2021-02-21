@@ -15,7 +15,7 @@ module.exports = {
         .setTitle("Links")
         .addField("Server", "https://discord.gg/dhusNR9rvv", false)
         .addField("Roblox Group", "https://www.roblox.com/groups/9180170", false)
-        .addField("Website", "Coming soon", false)
+        .addField("Website", "https://watersys.pearo.icu", false)
         .addField("Bot Invite", "Coming soon", false)
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
