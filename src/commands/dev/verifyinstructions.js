@@ -20,7 +20,7 @@ module.exports = {
 	.setColor("#00a2cb")
   	.addFields(
 		{ name: 'Wrong Username?', value: `Even bots can mess up sometimes! You can correct it by visiting: https://verify.eryn.io/ and re-verify.`, inline: false },
-		{ name: 'Notice', value: `We plan to improve the verification process by integrating portions of RoVer into WaterSys in the future.`, inline: false }
+		{ name: 'Notice', value: `We plan to improve the verification process by integrating portions of RoVer into WaterSys and making it seamless in the future.`, inline: false }
 	 )
 	
 	 client.channels.resolve('709113605710413896').send(instructionsembed)
