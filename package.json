@@ -2,17 +2,19 @@
 	"name": "watersys",
 	"description": "WaterSys, the custom Discord bot for Roblox verification and moderation.",
 	"version": "3.1.0",
+	"private": true,
 	"engines": {
 		"node": "12.x"
 	},
 	"main": "index.js",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Waterston/WaterstonSystems"
+		"url": "https://github.com/Waterston/WaterSys"
 	},
-	"bugs": "https://github.com/Waterston/WaterstonSystems/issues",
-	"author": "Bandelqs, TheRealPear",
-	"license": "ISC",
+	"bugs": "https://github.com/Waterston/WaterSys/issues",
+	"homepage": "https://github.com/Waterston/WaterSys#readme",
+	"author": "TheRealPear, Bandelqs",
+	"license": "GPL-3.0",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node .",
