@@ -8,8 +8,8 @@ module.exports = {
   guildOnly: true,
   usage: "<mention, id> <reason>",
   run: async (client, message, args) => {
-    if (!message.member.roles.cache.some(role => role.name === 'Community Manager')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
-    let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);  
+    if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
+    let member = message.mentions.members.first() || message.guild.members.fetch(args[0]);
     if (!member){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
 	let reason = args.slice(1).join(' ')
 	if(!reason) reason = `No reason specified`

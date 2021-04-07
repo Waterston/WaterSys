@@ -7,11 +7,11 @@ module.exports = {
   guildOnly: true,
   usage: "<mention, id>",
   run: async (client, message, args) => {
-	if (!message.member.roles.cache.some(role => role.name === 'Community Manager')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
+	if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
    if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     }))
-	const user = message.mentions.members.first() || message.guild.members.cache.get(args[1])
+	const user = message.mentions.members.first() || message.guild.members.fetch(args[0]);
 	//if (message.author.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
 	if (client.user.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	  
