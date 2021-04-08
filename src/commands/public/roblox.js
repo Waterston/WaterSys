@@ -19,6 +19,8 @@ module.exports = {
         let followers = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followers/count`).then(res => res.json())
         let following = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followings/count`).then(res => res.json())
         let thumbnail = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${body.robloxId}&size=352x352&format=Png&isCircular=false`).then(res => res.json())
+        // Convert the date into a user-friendly format
+        let joinDate = new Date(UserInfo.created)
 
         // Define the first embed, which will contain Roblox info.
         let whoembed = new Discord.MessageEmbed()
@@ -27,7 +29,7 @@ module.exports = {
         .addField("Status", `${Status.status}`, false)
         .addField("Bio", `${UserInfo.description}`, false)
         .addField("Roblox ID", `${body.robloxId}`, true)
-        .addField("Join Date", `${UserInfo.created}`, true)
+        .addField("Join Date", `${joinDate.getMonth() + 1}/${joinDate.getDate()}/${joinDate.getFullYear()}`, true)
         .addField("Friends", `${friends.count}`, true)
         .addField("Followers | Following", `${followers.count} | ${following.count}`, true)
         .setColor("#e51f12")
