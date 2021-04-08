@@ -12,7 +12,7 @@ module.exports = {
         .setColor("#0084ff")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setTitle(`${member.user.tag}'s Avatar`)
-        .setImage(member.user.avatarURL({ format: 'png', dynamic: true, size: 256 }))
+        .setImage(member.user.avatarURL({ format: 'png', dynamic: true, size: 512 }))
         .setFooter(client.user.username, client.user.displayAvatarURL())
         .setTimestamp()
         message.channel.send(embed)

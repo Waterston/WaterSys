@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
 
         let member = message.mentions.members.first() || message.member || await message.guild.members.fetch(args[0]);
-        if (!member){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
+        //if (!member){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
         // Sets the variable
 
         function checkDays(date) {
