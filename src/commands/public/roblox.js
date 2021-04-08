@@ -33,7 +33,7 @@ module.exports = {
         .setColor("#e51f12")
         .setAuthor(message.author.tag, message.author.displayAvatarURL())
         .setFooter(client.user.username, client.user.displayAvatarURL())
-        .setThumbnail(thumbnail.imageUrl)
+        .setThumbnail(thumbnail[0].imageUrl)
         .setTimestamp()
 
         message.channel.send(whoembed)
