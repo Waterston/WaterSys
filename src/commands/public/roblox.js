@@ -10,7 +10,7 @@ module.exports = {
     guildOnly: true,
     run: async (client, message, args) => {
 
-        let member = message.mentions.members.first() || await message.guild.members.fetch(args[0]) || message.member;
+        let member = message.mentions.members.first() || message.member || await message.guild.members.fetch(args[0]);
         // Sets the variables to the API links.
         let body = await fetch(`https://verify.eryn.io/api/user/${member.user.id}`).then(res => res.json())
         let Status = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())
@@ -18,7 +18,7 @@ module.exports = {
         let friends = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/friends/count`).then(res => res.json())
         let followers = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followers/count`).then(res => res.json())
         let following = await fetch(`https://friends.roblox.com/v1/users/${body.robloxId}/followings/count`).then(res => res.json())
-        let thumbnail = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${body.robloxId}&size=720x720&format=Png&isCircular=false`).then(res => res.json())
+        let thumbnail = await fetch(`https://thumbnails.roblox.com/v1/users/avatar?userIds=${body.robloxId}&size=352x352&format=Png&isCircular=false`).then(res => res.json())
 
         // Define the first embed, which will contain Roblox info.
         let whoembed = new Discord.MessageEmbed()
