@@ -1,16 +1,15 @@
 const Discord = require('discord.js')
 const warn = require('../.././models/warnings.js')
+
 module.exports = {
   name: "warn",
   category: "Moderation",
   description: "Warns a user for a reason",
   guildOnly: true,
-  usage: "<mention, id>",
+  usage: "<mention, id> <reason>",
   run: async (client, message, args) => {
 	if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
-   if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
-      timeout: 10000
-    }))
+	if (!member){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
 	const user = message.mentions.members.first() || message.guild.members.fetch(args[0]);
 	//if (message.author.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
 	if (client.user.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
