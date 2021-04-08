@@ -10,7 +10,7 @@ module.exports = {
     guildOnly: true,
     run: async (client, message, args) => {
 
-        let member = message.mentions.members.first() || message.member
+        let member = message.mentions.members.first() || message.member  || await message.guild.members.fetch(args[0]);
         // Sets the variables to the API links.
         let body = await fetch(`https://verify.eryn.io/api/user/${message.member.id}`).then(res => res.json())
         let Status = await fetch(`https://users.roblox.com/v1/users/${body.robloxId}/status`).then(res => res.json())

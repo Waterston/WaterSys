@@ -13,7 +13,7 @@ module.exports = {
 	  if (message.mentions.members.size === 0) return message.channel.send(`⚠️ No user specified, please mention the user.`).then(r => r.delete({
       timeout: 10000
     	}))
-	const user = message.mentions.members.first() || message.guild.members.cache.get(args[1]) || message.member
+	const user = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
 	
 	const nokicks = new Discord.MessageEmbed()
 	      .setColor("#0084ff")
