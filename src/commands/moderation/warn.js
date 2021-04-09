@@ -11,7 +11,7 @@ module.exports = {
 	if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`⛔ Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
 	const user = message.mentions.members.first() || await message.guild.members.fetch(args[0]);
 	if (!user){ return message.channel.send(`:warning: No user specified, please mention a user or provide a valid ID.`).then(msg => msg.delete({ timeout: 10000 }))}
-	if (message.author.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on yourself.`)
+	if (message.author.id === user.user.id) return message.channel.send(`:no_entry: You cannot run this command on yourself.`)
 	if (client.user.id === user.user.id) return message.channel.send(`⛔ You cannot run this command on the bot.`).catch(console.error);
 	  
 	let reason = args.slice(1).join(' ')

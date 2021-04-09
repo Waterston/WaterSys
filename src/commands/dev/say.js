@@ -10,7 +10,7 @@ module.exports = {
     run: async (client, message, args) => {
         if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`:no_entry: Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
         message.delete().catch()
-        if (args.length === 0) return message.channel.send(':warning: You did not specify a message for the bot to repeat.')
+        if (args.length === 0) return message.channel.send(':warning: No message was specified for the bot to repeat.')
         const msg = args.join(' ')
         message.channel.send(msg)
         
