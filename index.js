@@ -79,8 +79,8 @@ client.on("ready", () => {
   }, 300000) */
 })
 
-client.on("guildMemberAdd", member =>{
-  const channel = client.channels.cache.find(channel => channel.name === "secondary")
+/* client.on("guildMemberAdd", member =>{
+  const channel = client.channels.cache.find(channel => channel.name === "public-lounge")
   const welcomeembed = new Discord.MessageEmbed()
   .setColor("#d37842")
   .setTimestamp()
@@ -101,7 +101,7 @@ client.on("guildMemberAdd", member =>{
   member.send(welcomeembed).catch((error) => {
     return
   });
-})
+}) */
 
 client.on("messageDelete", async message =>{
   if(message.author.bot) return
