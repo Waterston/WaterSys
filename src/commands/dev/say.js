@@ -6,7 +6,7 @@ module.exports = {
     category: "dev",
     description: "Makes the bot repeat your entered message",
     usage: "<message>",
-    ownerOnly: true,
+    ownerOnly: false,
     run: async (client, message, args) => {
         if (!message.member.roles.cache.some(role => role.name === 'Discord Moderator')) return; //message.channel.send(`:no_entry: Insufficient permissions to run this command.`).then(r => r.delete({timeout: 10000}))
         message.delete().catch()
