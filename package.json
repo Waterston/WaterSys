@@ -1,7 +1,7 @@
 {
 	"name": "watersys",
 	"description": "WaterSys, the custom Discord bot for Roblox verification and moderation.",
-	"version": "3.1.2",
+	"version": "3.1.4",
 	"private": true,
 	"engines": {
 		"node": "12.x"
