@@ -14,7 +14,7 @@ module.exports = {
         // Rig the ratings for specific users.
         if (member.user.id === "137663615657312256") { rate = "[redacted]" } // Pear
         if (member.user.id === "668529679732572170") { rate = "101% gay" } // RGB_Flames
-        if (member.user.id === "213702181533122560") { rate = "100% gay, but he's not ready to accept that yet." } // Toboo_Racc
+        if (member.user.id === "213702181533122560") { rate = "100% gay, but he's not ready to accept that yet" } // Toboo_Racc
         if (member.user.id === "341022841405308931") { rate = "200% gay" } // bowsercube
 
         const embed = new Discord.MessageEmbed()
