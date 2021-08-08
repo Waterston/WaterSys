@@ -11,7 +11,7 @@ WaterSys is a custom Roblox verification and moderation bot powered with [Discor
 This is intended those that are willing to customize the bot. We will not provide support (other than what is documented here) on setting it up for your own use.
 
 ### Windows
-* Install Node 12.x and MongoDB (if hosting locally)
+* Install Node 16.x and MongoDB (if hosting locally)
 * Open a Command Prompt/PowerShell/Terminal/etc. session with elevated privilege and run `npm install -g --production windows-build-tools`.
 * Install the bot's dependencies (excluding devDependencies): `npm install --production`
 * Set up the environment variables (list below) to include your Discord bot token and Mongoose URI, and replace the default values in `config.json`
