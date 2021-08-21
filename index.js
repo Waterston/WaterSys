@@ -1,7 +1,4 @@
-const {
-  Client,
-  Collection
-} = require("discord.js");
+const { Client, Intents, Collection } = require('discord.js');
 const Discord = require("discord.js");
 //const db = require('quick.db')
 //const fetch = require('node-superfetch')
@@ -15,9 +12,10 @@ mongoose.connect(process.env.MONGOOSE, {
       console.log('Connected to MongoDB.');
 });
 
-const client = new Client({
+/* const client = new Client({
   disableEveryone: true
-})
+}) */
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.commands = new Collection();
 client.aliases = new Collection();
