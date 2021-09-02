@@ -4,10 +4,8 @@ const Discord = require("discord.js");
 //const fetch = require('node-superfetch')
 require('dotenv').config()
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGOOSE, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,}, (err) => {
+await mongoose.connect(process.env.MONGOOSE, 
+      (err) => {
       if (err) return console.error(err);
       console.log('Connected to MongoDB.');
 });
@@ -173,7 +171,7 @@ client.on("message", async message => {
     for (var i in blacklisted) {
       if (message.content.toLowerCase().includes(blacklisted[i].toLowerCase())) foundInText = true
     }
-             if (foundInText && !message.member.roles.cache.some(role =>['800033395710099476', '800033394725093406'].includes(role.id))) { //ID in order: Community Manager, Administrator
+             if (foundInText && !message.member.roles.cache.some(role =>['800033395710099476', '800033394725093406'].includes(role.id))) { //ID in order: Founder, Administrator
                   message.delete();
                   message.channel.send(`${message.author}, do not send blacklisted text. Attempting to bypass this will result in moderation actions.`).then(r => r.delete({timeout: 10000}))
               }
