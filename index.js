@@ -10,9 +10,7 @@ await mongoose.connect(process.env.MONGOOSE,
       console.log('Connected to MongoDB.');
 });
 
-/* const client = new Client({
-  disableEveryone: true
-}) */
+const client = new Discord.Client({ allowedMentions: { parse: ['users', 'roles'], repliedUser: true } });
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
 client.commands = new Collection();
@@ -29,7 +27,7 @@ client.on("ready", () => {
   console.log(`${client.user.username} is now connected to ${client.guilds.cache.size} server(s) with commands loaded.`);
   client.user.setPresence({
     status: "online",
-    activity: {
+    activities: {
       name: "!help | watersys.pearo.icu",
       type: "WATCHING"
     }

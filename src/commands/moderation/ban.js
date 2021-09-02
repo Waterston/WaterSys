@@ -14,7 +14,7 @@ module.exports = {
     if(!reason) reason = `No reason specified`
     if (message.author.id === member.user.id) return message.channel.send(`:no_entry: You cannot run this command on yourself.`)
     if (client.user.id === member.user.id) return message.channel.send(`:no_entry: You cannot run this command on the bot.`).catch(console.error);
-    await member.ban()
+    await member.ban({ reason: `${reason}` }).then(console.log).catch(console.error);
 
     // Builds the embed for mod logs channel	  
     let blogEmbed = new Discord.MessageEmbed()
